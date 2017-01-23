@@ -26,17 +26,17 @@ $ ./dump_packet.sh pkt.txt
 ------------------------------------------------------------
 ```
 
-字段|长度|格式|内容
--|-|-|-
-L|4byte|int(little endian)|整个数据包的长度
-T|4byte|int(little endian)|消息类型码，用于区分消息类型
-KEYL|4byte|int(little endian)|KEY字段长度，固定为64
-KEY|64byte|base64 string|解密DAT字段用的密钥
-IVL|4byte|int(little endian)|IV字段长度，固定为44
-IV|44byte|base64 string|解密DAT字段用的向量
-DATL|4byte|int(little endian)|DAT字段长度
-DAT|变长|base64 string|数据包内容
-SUM|4byte|int(little endian)|校验和，值为前述所有字段每个字节的和
+|字段|长度|格式|内容|
+|----|----|--------|----------------|
+|L|4byte|int(little endian)|整个数据包的长度
+|T|4byte|int(little endian)|消息类型码，用于区分消息类型
+|KEYL|4byte|int(little endian)|KEY字段长度，固定为64
+|KEY|64byte|base64 string|解密DAT字段用的密钥
+|IVL|4byte|int(little endian)|IV字段长度，固定为44
+|IV|44byte|base64 string|解密DAT字段用的向量
+|DATL|4byte|int(little endian)|DAT字段长度
+|DAT|变长|base64 string|数据包内容
+|SUM|4byte|int(little endian)|校验和，值为前述所有字段每个字节的和
 
 其中，DAT字段是使用由游戏客户端随机产生的密钥Rkey/Riv进行aes-cbc加密后base64编码而来  
 KEY和IV字段是游戏客户端使用固定主密钥进行aes-cbc加密后base64编码而来  
