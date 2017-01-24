@@ -8,12 +8,13 @@ usage(){
     echo "    -u : unload syscall hijack module";
     echo "    -s : start hijack";
     echo "    -f : stop hijack";
+    echo "    -r : win tower rush";
     echo "    -l seconds: specify dungeon clrtime";
     exit 1;
 }
 
 noproc_exit(){
-    echo "Soulseeker process not running! abort.";
+    echo "Game not running! abort.";
     exit 1;
 }
 
@@ -23,9 +24,12 @@ if [ -z "$1" ]; then
     usage
 fi
 
-while getopts "lusft:" arg
+while getopts "lusfrt:" arg
 do
     case $arg in
+        r)
+          echo 1 > /proc/soulseeker_hook/tower_rush_win
+          ;;
         t)
           echo "$optarg" > /proc/soulseeker_hook/dungeon_clrtime
           ;;

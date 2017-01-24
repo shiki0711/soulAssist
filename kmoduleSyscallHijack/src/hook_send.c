@@ -393,7 +393,7 @@ static int re_encrypt_packet(packet_info_t *info){
 }
 
 /* TODO(yanfeng): json decoder */
-static int hijack_packet(packet_info_t *info) {
+static int hijack_packet_end_dungeon(packet_info_t *info) {
   int ret = 0;  /* if packet changed then return 1 */
   char *p1 = NULL;
   char *p2 = NULL;
@@ -401,46 +401,120 @@ static int hijack_packet(packet_info_t *info) {
   int rc;
   char buf[16] = {0};
   
-  if(info->type == 102){
-    /* finish dungeon */
-    rc = hook_config_int("dungeon_clrtime", &property_value_int);
-    if(rc){
-      /* none dungeon_clrtime config */
-      return ret;
-    }
-    if(property_value_int <= 10 || property_value_int >= 100){
-      /* we simply surpport value of range[10-99] only */
-      return ret;
-    }
-    sprintf(buf, "%d", property_value_int);
-    p1 = strstr(info->dec_data, "\"clrtimesecs\":");
-    if(!p1){
-      hook_debug("sys_sendto hijack_packet error when try to match finish dungeon(type=102) packet\n");
-      return ret;
-    }
-    p1 += strlen("\"clrtimesecs\":");
-    p2 = strstr(p1, ",");
-    if(!p2){
-      hook_debug("sys_sendto hijack_packet error while packet may broken\n");
-      return ret;
-    }
-    /* now p1 point to the head of original value and p2 point to the tail */
-    if((p2 - p1) < 2){
-      /* no need to change clrtimesecs, return */
-      return ret;
-    }
-    *p1 = buf[0];
-    p1++;
-    *p1 = buf[1];
-    p1++;
-    while(p1 != p2){
-      /* fill gaps with spaces */
-      *p1 = ' ';
-      ++p1;
-    }
-    ret = 1;
+  rc = hook_config_int("dungeon_clrtime", &property_value_int);
+  if(rc){
+    /* none dungeon_clrtime config */
+    return ret;
   }
+  if(property_value_int <= 10 || property_value_int >= 100){
+    /* we simply surpport value of range[10-99] only */
+    return ret;
+  }
+  sprintf(buf, "%d", property_value_int);
+  p1 = strstr(info->dec_data, "\"clrtimesecs\":");
+  if(!p1){
+    hook_debug("sys_sendto hijack_packet error when try to match finish dungeon(type=102) packet\n");
+    return ret;
+  }
+  p1 += strlen("\"clrtimesecs\":");
+  p2 = strstr(p1, ",");
+  if(!p2){
+    hook_debug("sys_sendto hijack_packet error while packet may broken\n");
+    return ret;
+  }
+  /* now p1 point to the head of original value and p2 point to the tail */
+  if((p2 - p1) < 2){
+    /* no need to change clrtimesecs, return */
+    return ret;
+  }
+  *p1 = buf[0];
+  p1++;
+  *p1 = buf[1];
+  p1++;
+  while(p1 != p2){
+    /* fill gaps with spaces */
+    *p1 = ' ';
+    ++p1;
+  }
+  ret = 1;
+   
   return ret;
+}
+
+static int hijack_packet_end_tower_rush(packet_info_t *info) {
+  int ret = 0;  /* if packet changed then return 1 */
+  char *p1 = NULL;
+  char *p2 = NULL;
+  int property_value_int;
+  int rc;
+  
+  rc = hook_config_int("tower_rush_win", &property_value_int);
+  if(rc){
+    /* none tower_rush_win config */
+    return ret;
+  }
+  if(property_value_int != 1){
+    /* must be 1, which means win the game forcing */
+    return ret;
+  }
+  p1 = strstr(info->dec_data, "\"bWin\":");
+  if(!p1){
+    hook_debug("sys_sendto hijack_packet error when try to match finish TR(type=816205) packet\n");
+    return ret;
+  }
+  p1 += strlen("\"bWin\":");
+  p2 = strstr(p1, ",");
+  if(!p2){
+    hook_debug("sys_sendto hijack_packet error: no [\"bWin\":] found\n");
+    return ret;
+  }
+  /* now p1 point to the head of original value and p2 point to the tail */
+  if(strncmp(p1, "true", strlen("true")) == 0){
+    /* we already win the game, no need to change anymore, return */
+    return ret;
+  }
+  if(strncmp(p1, "false", strlen("false")) != 0){
+    hook_debug("sys_sendto hijack_packet error: [\"bWin\":] is neither true or false\n");
+    return ret;
+  }
+  *p1 = 't';
+  p1++;
+  *p1 = 'r';
+  p1++;
+  *p1 = 'u';
+  p1++;
+  *p1 = 'e';
+  p1++;
+  /* fill gaps with spaces */
+  *p1 = ' ';
+  p1++;
+  ret = 1;
+
+  return ret;
+}
+
+typedef struct packet_handler {
+  int type;
+  int(*handler)(packet_info_t*);
+} packet_handler_t;
+
+static packet_handler_t hijack_packet_table[] = {
+  {.type = 102, .handler = hijack_packet_end_dungeon},
+  {.type = 816205, .handler = hijack_packet_end_tower_rush},
+  {.type = 0, .handler = NULL}  /* sentinel */
+};
+
+/* try to match and perform packet handler */
+static int hijack_packet(packet_info_t *info) {
+  int i = 0;
+
+  while(hijack_packet_table[i].type){
+    if(hijack_packet_table[i].type == info->type){
+      return hijack_packet_table[i].handler(info);
+    }
+    ++i;
+  }
+  return 0;
 }
 
 static int get_usp_buff(char *to, const char __user *from, size_t size) {
