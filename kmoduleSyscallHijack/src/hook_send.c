@@ -18,7 +18,7 @@ static char func_name[NAME_MAX] = "sys_sendto";
 struct send_param {
   char __user *buff;  /* in ARM_r1  */
   size_t size;  /* in ARM_r2  */
-  char work[1000];
+  char *work;
 };
 
 /* super key */
@@ -116,7 +116,7 @@ static int filter_packet(char *buff, size_t len, packet_info_t *info) {
     return 0;
   }
   offset += 4;
-
+  
   /* T */
   info->type = *((int *)(buff+offset));
   offset += 4;
@@ -517,6 +517,18 @@ static int hijack_packet(packet_info_t *info) {
   return 0;
 }
 
+static int packet_handler_matched(int type){
+  int i = 0;
+
+  while(hijack_packet_table[i].type){
+    if(hijack_packet_table[i].type == type){
+      return 1;
+    }
+    ++i;
+  }
+  return 0;
+}
+
 static int get_usp_buff(char *to, const char __user *from, size_t size) {
   unsigned long n = 0;
   n = copy_from_user(to, from, size);
@@ -534,20 +546,42 @@ static int entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
   struct send_param *data;
   pid_t target_pid = 0;
   packet_info_t info = {0};
+  char buffer[8] = {0};  /* header buffer */
   int ret;
   
   data = (struct send_param *)ri->data;
   data->buff = (char __user *)(regs->ARM_r1);
   data->size = (size_t)(regs->ARM_r2);
-  if(!get_usp_buff(data->work, data->buff, data->size)){
-    hook_debug("sys_send copy filename from userspace faild!\n");
-    return 0;
-  }
+  data->work = NULL;
+
   if(hook_config_int("target_pid", &target_pid)){
     //hook_debug("sys_send no target_pid!\n");
     return 0;
   }
   if(target_pid && target_pid==current->tgid){
+    if(!get_usp_buff(buffer, data->buff, 8)){
+      hook_debug("sys_send copy header from userspace faild!\n");
+      return 0;
+    }
+    info.pktlen = *(int *)(buffer);
+    info.type = *(int *)(buffer+4);
+    if(!packet_handler_matched(info.type)){
+      /* packet type not matched */
+      return 0;
+    }
+    
+    data->work = kcalloc(1, data->size + 1, GFP_KERNEL);
+    if(!data->work){
+      hook_debug("sys_sendto alloc working buff error!\n");
+      return 0;
+    }
+    if(!get_usp_buff(data->work, data->buff, data->size)){
+      hook_debug("sys_send copy packet from userspace faild!\n");
+      kfree(data->work);
+      data->work = NULL;
+      return 0;
+    }
+    
     //hook_debug("sys_send matched: pid=%d data=%s\n", current->pid, &data->work[12]);
     ret = filter_packet(data->work, data->size, &info);
     //hook_debug("filter return: %d\n", ret);
@@ -584,6 +618,8 @@ static int entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
       }
       put_packet(&info);
     }
+    kfree(data->work);
+    data->work = NULL;
   }
   return 0;
 }

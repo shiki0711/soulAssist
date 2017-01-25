@@ -9,7 +9,7 @@ usage(){
     echo "    -s : start hijack";
     echo "    -f : stop hijack";
     echo "    -r : win tower rush";
-    echo "    -l seconds: specify dungeon clrtime";
+    echo "    -t seconds: specify dungeon clrtime";
     exit 1;
 }
 
