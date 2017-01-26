@@ -540,13 +540,14 @@ static int set_usp_buff(char __user *to, char *from, size_t size){
   return (n == 0);
 }
 
-/* Get userspace info */
+/* entry of sys_sendto */
 static int entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
 {
   struct send_param *data;
   pid_t target_pid = 0;
   packet_info_t info = {0};
   char buffer[8] = {0};  /* header buffer */
+  int debug_dump_packet = 0;
   int ret;
   
   data = (struct send_param *)ri->data;
@@ -558,16 +559,20 @@ static int entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
     //hook_debug("sys_send no target_pid!\n");
     return 0;
   }
+  hook_config_int("debug_dump_packet", &debug_dump_packet);
   if(target_pid && target_pid==current->tgid){
-    if(!get_usp_buff(buffer, data->buff, 8)){
-      hook_debug("sys_send copy header from userspace faild!\n");
-      return 0;
-    }
-    info.pktlen = *(int *)(buffer);
-    info.type = *(int *)(buffer+4);
-    if(!packet_handler_matched(info.type)){
-      /* packet type not matched */
-      return 0;
+    if(!debug_dump_packet){
+      /* try to match packet type */
+      if(!get_usp_buff(buffer, data->buff, 8)){
+        hook_debug("sys_send copy header from userspace faild!\n");
+        return 0;
+      }
+      info.pktlen = *(int *)(buffer);
+      info.type = *(int *)(buffer+4);
+      if(!packet_handler_matched(info.type)){
+        /* packet type not matched */
+        return 0;
+      }
     }
     
     data->work = kcalloc(1, data->size + 1, GFP_KERNEL);

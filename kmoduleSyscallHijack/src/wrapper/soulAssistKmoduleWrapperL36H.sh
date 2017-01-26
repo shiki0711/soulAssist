@@ -3,12 +3,13 @@
 THIS_FILE=$0
 
 usage(){
-    echo "Usage: $0 [-l|-u|-s|-f|-t] [option_value]";
+    echo "Usage: $0 [-l|-u|-s|-f|-d|-r|-t] [optional_value]";
     echo "    -l : load syscall hijack module";
     echo "    -u : unload syscall hijack module";
     echo "    -s : start hijack";
     echo "    -f : stop hijack";
     echo "    -r : win tower rush";
+    echo "    -d : dump packet info to kmsg";
     echo "    -t seconds: specify dungeon clrtime";
     exit 1;
 }
@@ -24,7 +25,7 @@ if [ -z "$1" ]; then
     usage
 fi
 
-while getopts "lusfrt:" arg
+while getopts "lusfrdt:" arg
 do
     case $arg in
         r)
@@ -53,6 +54,9 @@ do
           ;;
         f)
           echo 0 > /proc/soulseeker_hook/target_pid  
+          ;;
+        d)
+          echo 1 > /proc/soulseeker_hook/debug_dump_packet
           ;;
         ?)
           usage

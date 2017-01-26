@@ -7,11 +7,14 @@
 * 魔王之塔强制通关
 
 ## TODO:
-* 突破内核模块校验机制，实现在无内核源码的手机上执行
+* 修改次元之门哥布林掉落为100%掉落红宝石碎片
+* 魔王之塔通关时间修改(防服务器检测)
+* 突破内核模块校验机制，实现在无对应内核源码的手机上运行
 
 ## reference
-[kprobes](http://lxr.linux.no/linux+v3.8.2/Documentation/kprobes.txt)
-[Linux 内核可装载模块的版本检查机制](http://www.ibm.com/developerworks/cn/linux/l-cn-kernelmodules/index.html)
-[突破内核模块版本校验机制](https://yq.aliyun.com/articles/1724)
-[Sony L36h Open source archive](http://developer.sonymobile.com/downloads/xperia-open-source-archives/open-source-archive-for-build-10-5-1-a-0-292/)
+* [kprobes](http://lxr.linux.no/linux+v3.8.2/Documentation/kprobes.txt)  
+* [Linux 内核可装载模块的版本检查机制](http://www.ibm.com/developerworks/cn/linux/l-cn-kernelmodules/index.html)  
+* [突破内核模块版本校验机制](https://yq.aliyun.com/articles/1724)  
+* [Sony L36h Open source archive](http://developer.sonymobile.com/downloads/xperia-open-source-archives/open-source-archive-for-build-10-5-1-a-0-292/)
+
 

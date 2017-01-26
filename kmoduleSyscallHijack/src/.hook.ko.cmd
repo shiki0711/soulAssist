@@ -1,0 +1,1 @@
+cmd_/home/yanfeng/soulAssist/kmoduleSyscallHijack/src/hook.ko := arm-linux-androideabi-ld -EL -r  -T /home/yanfeng/softwares/l36h/kernel/scripts/module-common.lds --build-id  -o /home/yanfeng/soulAssist/kmoduleSyscallHijack/src/hook.ko /home/yanfeng/soulAssist/kmoduleSyscallHijack/src/hook.o /home/yanfeng/soulAssist/kmoduleSyscallHijack/src/hook.mod.o
