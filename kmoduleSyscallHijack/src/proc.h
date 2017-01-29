@@ -21,7 +21,7 @@ typedef struct property {
 extern int hook_init_proc(void);
 extern void hook_release_proc(void);
 extern int hook_create_proc_entry(property_t *);
-extern char* hook_read_proc(property_t *);
+//extern char* hook_read_proc(property_t *);
 extern void hook_remove_proc_entry(property_t *);
 
 

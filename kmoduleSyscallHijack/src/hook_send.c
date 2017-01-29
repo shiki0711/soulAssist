@@ -54,21 +54,21 @@ static int init_super_key(void) {
 typedef struct packet_info {
   /* original packet info */
   char *pkt;
-  int pktlen;
-  int type;
-  int keylen;
+  u32 pktlen;
+  u32 type;
+  u32 keylen;
   char *key_base64;
-  int ivlen;
+  u32 ivlen;
   char *iv_base64;
-  int datalen;
+  u32 datalen;
   char *data_base64;
-  int sum;
+  u32 sum;
 
   /* working info */
   char *enc_data;
-  int enc_data_len;
+  u32 enc_data_len;
   char *dec_data;
-  int dec_data_len;
+  u32 dec_data_len;
   char key[48];
   char iv[32];
   char real_key_base64[48];
@@ -78,7 +78,7 @@ typedef struct packet_info {
 
   /* new pkt */
   char *real_pkt;
-  int real_pkt_len;
+  u32 real_pkt_len;
 } packet_info_t;
 
 static void put_packet(packet_info_t *info){
@@ -111,18 +111,18 @@ static int filter_packet(char *buff, size_t len, packet_info_t *info) {
     return 0;
   }
   /* L */
-  info->pktlen = *((int *)(buff+offset));
+  info->pktlen = *((u32 *)(buff+offset));
   if(info->pktlen != len){
     return 0;
   }
   offset += 4;
   
   /* T */
-  info->type = *((int *)(buff+offset));
+  info->type = *((u32 *)(buff+offset));
   offset += 4;
 
   /* KEYL and KEY */
-  info->keylen = *((int *)(buff+offset));
+  info->keylen = *((u32 *)(buff+offset));
   if(info->keylen != 64){
     return 0;
   }
@@ -139,7 +139,7 @@ static int filter_packet(char *buff, size_t len, packet_info_t *info) {
   offset += info->keylen;
 
   /* IVL and IV */
-  info->ivlen = *((int *)(buff+offset));
+  info->ivlen = *((u32 *)(buff+offset));
   if(info->ivlen != 44){
     return 0;
   }
@@ -156,7 +156,7 @@ static int filter_packet(char *buff, size_t len, packet_info_t *info) {
   offset += info->ivlen;
 
   /* DATL and DAT */
-  info->datalen = *((int *)(buff+offset));
+  info->datalen = *((u32 *)(buff+offset));
   offset += 4;
   
   if(info->datalen + offset >= len){
@@ -167,7 +167,7 @@ static int filter_packet(char *buff, size_t len, packet_info_t *info) {
   offset += info->datalen;
 
   /* SUM */
-  info->sum = *((int *)(buff+offset));
+  info->sum = *((u32 *)(buff+offset));
   offset += 4;
   if(offset != len){
     return 0;
@@ -176,7 +176,7 @@ static int filter_packet(char *buff, size_t len, packet_info_t *info) {
 }
 
 static void show_packet_info(packet_info_t *info){
-  hook_debug("pktlen=%d type=%d\n", info->pktlen, info->type);
+  hook_debug("pktlen=%u type=%u\n", info->pktlen, info->type);
   if(info->dec_data){
     hook_debug("decoded data: %s\b", info->dec_data);
   }
@@ -190,10 +190,10 @@ static void show_packet_info(packet_info_t *info){
   //hook_debug("sum=%d\n", info->sum);
 }
 
-static int encrypt_data(int enc_flag, char* key, int lkey,
-                        char* iv, int liv,
-                        char *enc, int lenc,
-                        char *dec, int ldec){
+static int encrypt_data(int enc_flag, char* key, unsigned int lkey,
+                        char* iv, unsigned int liv,
+                        char *enc, unsigned int lenc,
+                        char *dec, unsigned int ldec){
   struct crypto_blkcipher *key_tfm = NULL;
   struct blkcipher_desc desc;
   struct scatterlist sg_enc, sg_dec;
@@ -298,8 +298,8 @@ static int decrypt_packet(packet_info_t *info){
 
 static int re_encrypt_packet(packet_info_t *info){
   int offset = 0;
-  int *working = NULL;
-  int *new_pktlen = NULL;
+  u32 *working = NULL;
+  u32 *new_pktlen = NULL;
   int rc;
   int len;
   char *buff = NULL;
@@ -313,31 +313,31 @@ static int re_encrypt_packet(packet_info_t *info){
   /* re-compose packet: */
   
   /* pktlen */
-  new_pktlen = (int*)(info->real_pkt + offset);
+  new_pktlen = (u32*)(info->real_pkt + offset);
   offset += 4;
 
   /* type */
-  working = (int*)(info->real_pkt + offset);
+  working = (u32*)(info->real_pkt + offset);
   *working = info->type;
   offset += 4;
 
   /* keylen */
-  working = (int*)(info->real_pkt + offset);
+  working = (u32*)(info->real_pkt + offset);
   *working = 64;
   offset += 4;
 
   /* key */
-  working = (int*)(info->real_pkt + offset);
+  working = (u32*)(info->real_pkt + offset);
   memcpy((char*)working, info->key_base64, 64);
   offset += 64;
 
   /* ivlen */
-  working = (int*)(info->real_pkt + offset);
+  working = (u32*)(info->real_pkt + offset);
   *working = 44;
   offset += 4;
 
   /* iv */
-  working = (int*)(info->real_pkt + offset);
+  working = (u32*)(info->real_pkt + offset);
   memcpy((char*)working, info->iv_base64, 44);
   offset += 44;
 
@@ -368,7 +368,7 @@ static int re_encrypt_packet(packet_info_t *info){
   }
   
   /* datalen */
-  working = (int*)(info->real_pkt + offset);
+  working = (u32*)(info->real_pkt + offset);
   *working = rc;
   offset += 4;
   offset += rc;  /* skip data field */
@@ -383,7 +383,7 @@ static int re_encrypt_packet(packet_info_t *info){
   info->real_pkt_len = *new_pktlen;
   
   /* calculate sum */
-  working = (int*)(info->real_pkt + offset);
+  working = (u32*)(info->real_pkt + offset);
   len = 0;
   for(; offset>=0; offset--){
     len += *(info->real_pkt + offset);
@@ -567,8 +567,8 @@ static int entry_handler(struct kretprobe_instance *ri, struct pt_regs *regs)
         hook_debug("sys_send copy header from userspace faild!\n");
         return 0;
       }
-      info.pktlen = *(int *)(buffer);
-      info.type = *(int *)(buffer+4);
+      info.pktlen = *(u32 *)(buffer);
+      info.type = *(u32 *)(buffer+4);
       if(!packet_handler_matched(info.type)){
         /* packet type not matched */
         return 0;

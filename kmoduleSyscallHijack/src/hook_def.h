@@ -10,10 +10,10 @@
 #ifndef __HOOK_DEF_H__
 #define __HOOK_DEF_H__
 
-extern int hook_open_init(void);
-extern void hook_open_exit(void);
-extern int hook_clock_gettime_init(void);
-extern void hook_clock_gettime_exit(void);
+//extern int hook_open_init(void);
+//extern void hook_open_exit(void);
+//extern int hook_clock_gettime_init(void);
+//extern void hook_clock_gettime_exit(void);
 extern int hook_send_init(void);
 extern void hook_send_exit(void);
 
