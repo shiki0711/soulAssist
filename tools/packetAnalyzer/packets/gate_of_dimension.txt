@@ -1,0 +1,3527 @@
+进入副本(request):
+{
+  "bRetry": 0,
+  "gIidx": 4,
+  "lIdx": 48,
+  "herolist": [
+    {
+      "slotidx": 1,
+      "hsidx": 8012170
+    },
+    {
+      "slotidx": 2,
+      "hsidx": 8012142
+    },
+    {
+      "slotidx": 3,
+      "hsidx": 8012186
+    },
+    {
+      "slotidx": 4,
+      "hsidx": 8012146
+    },
+    {
+      "slotidx": 5,
+      "hsidx": 8012182
+    }
+  ],
+  "petList": [
+    {
+      "slotidx": 1,
+      "hsidx": 410471
+    }
+  ],
+  "ctoken": "10832480",
+  "version": "1.6.3",
+  "langCode": "zh",
+  "sessionKey": "eea1d4c0221356a6ea84cb656829caca15218a9c",
+  "sq": 13,
+  "countryCode": "CN"
+}
+进入副本(response):
+{
+  "gdesc": {
+    "gIdx": 0,
+    "curT": 0,
+    "maxT": 0,
+    "bChooseReward": 0
+  },
+  "finance": {
+    "dpinfo": {
+      "freeCurP": 16,
+      "freeMaxP": 30,
+      "remainSecRegenFreeP": 32
+    },
+    "cash": 886,
+    "gold": 10492341,
+    "curClovers": 190,
+    "maxClovers": 1000,
+    "ruby": 643
+  },
+  "dticket": 11908,
+  "clrcode": "%6^01KE51abU",
+  "gIidx": 4,
+  "lIdx": 48,
+  "clrrewardindex": 2,
+  "clrrewardrullets": [
+    {
+      "type": 23,
+      "v1": 2,
+      "v2": 7118,
+      "hit": 730,
+      "v3": 3
+    },
+    {
+      "type": 23,
+      "v1": 1,
+      "v2": 7301,
+      "hit": 5000,
+      "v3": 1
+    },
+    {
+      "type": 23,
+      "v1": 1,
+      "v2": 7132,
+      "hit": 10000,
+      "v3": 1
+    }
+  ],
+  "chooserewads": [],
+  "usingHeroList": [
+    {
+      "owninfo": {
+        "manidx": 8012170,
+        "idx": 7404,
+        "exp": 0,
+        "lv": 42,
+        "entExp": 0,
+        "entStep": 7,
+        "wpn": {
+          "manidx": 294071,
+          "idx": 10882,
+          "slot": 3,
+          "slots": [
+            {
+              "no": 0,
+              "jp": {
+                "manidx": 23837,
+                "jidx": 203,
+                "exp": 0,
+                "ent_st": 5,
+                "eq_manidx": 294071,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2032
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2033
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2035
+                  }
+                ]
+              }
+            },
+            {
+              "no": 1,
+              "jp": {
+                "manidx": 31667,
+                "jidx": 203,
+                "exp": 0,
+                "ent_st": 5,
+                "eq_manidx": 294071,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2032
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2033
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2035
+                  }
+                ]
+              }
+            },
+            {
+              "no": 2,
+              "jp": {
+                "manidx": 22639,
+                "jidx": 203,
+                "exp": 0,
+                "ent_st": 5,
+                "eq_manidx": 294071,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2032
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2034
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2035
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "amr": {
+          "manidx": 524021,
+          "idx": 12308,
+          "slot": 3,
+          "slots": [
+            {
+              "no": 0,
+              "jp": {
+                "manidx": 29496,
+                "jidx": 202,
+                "exp": 0,
+                "ent_st": 5,
+                "eq_manidx": 524021,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2021
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2023
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2025
+                  }
+                ]
+              }
+            },
+            {
+              "no": 1,
+              "jp": {
+                "manidx": 50566,
+                "jidx": 202,
+                "exp": 0,
+                "ent_st": 5,
+                "eq_manidx": 524021,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2021
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2023
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2026
+                  }
+                ]
+              }
+            },
+            {
+              "no": 2,
+              "jp": {
+                "manidx": 51209,
+                "jidx": 202,
+                "exp": 0,
+                "ent_st": 5,
+                "eq_manidx": 524021,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2021
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2023
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2025
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "asr1": {
+          "manidx": 729068,
+          "idx": 14386,
+          "slot": 3,
+          "slots": [
+            {
+              "no": 0,
+              "jp": {
+                "manidx": 23762,
+                "jidx": 203,
+                "exp": 0,
+                "ent_st": 5,
+                "eq_manidx": 729068,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2032
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2034
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2036
+                  }
+                ]
+              }
+            },
+            {
+              "no": 1,
+              "jp": {
+                "manidx": 17693,
+                "jidx": 203,
+                "exp": 0,
+                "ent_st": 0,
+                "eq_manidx": 729068,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2031
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2033
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2036
+                  }
+                ]
+              }
+            },
+            {
+              "no": 2,
+              "jp": {
+                "manidx": 11697,
+                "jidx": 203,
+                "exp": 0,
+                "ent_st": 0,
+                "eq_manidx": 729068,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2031
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2033
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2036
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "sprt1": 0,
+        "sprt2": 0,
+        "runeslots": [],
+        "PassiveSkillID": 22,
+        "PassiveSkillID2": 0,
+        "cosmanidx": 6573,
+        "costidx": 0,
+        "maxlv": 42
+      },
+      "abilities": {
+        "idx": 0,
+        "grade": 0,
+        "curHp": 127917,
+        "maxHp": 166519,
+        "atkPW": 45102,
+        "atkC": 0,
+        "dodgeC": 8,
+        "defPW": 6157,
+        "atkSPD": 115,
+        "movSPD": 108,
+        "criC": 24,
+        "minCriD": 115,
+        "maxCriD": 168,
+        "ccres": 20,
+        "skillprimary": 107404,
+        "skillprimary2": 0,
+        "skillsecondary": 107404,
+        "skillsecondaryChance": 0,
+        "skillpower": 472,
+        "resname": null,
+        "nAutoSkill": 0,
+        "helperUsingTimes": 20,
+        "skillcool": 22,
+        "summontime": 10,
+        "PassiveSkillID": 22,
+        "PassiveSkillID2": 0,
+        "resFD": 0,
+        "resID": 0,
+        "resPD": 25,
+        "resED": 0,
+        "resWD": 0,
+        "resAll": 0,
+        "resMelee": 9,
+        "resRanged": 0,
+        "addSkill2sec": 0,
+        "ignoreEnArmor": 0,
+        "decSkillCool": 0,
+        "decSkillCool2": 0,
+        "atkType": 1,
+        "heroType": 3,
+        "nAutoGameSpeed": 0,
+        "nHPFullResurrect": 0,
+        "nKillEmAll": 0,
+        "addHealingRate": 3,
+        "addDmgToHumanHero": 0,
+        "addDmgToFurryHero": 0,
+        "addDmgToDevilHero": 0,
+        "addDmgToSpiritHero": 0,
+        "addSupportDmg": 0,
+        "silenceReg": 0,
+        "confusionReg": 0,
+        "stunReg": 10,
+        "lapidifyReg": 0,
+        "fearReg": 5,
+        "curseReg": 0,
+        "frostReg": 10,
+        "moveSpeedDownReg": 6,
+        "atkSpeedDownReg": 0,
+        "atkDownReg": 0,
+        "defDownReg": 0,
+        "secChance": 0,
+        "secPW": 0,
+        "spPW": 9,
+        "race": 0,
+        "addSkill2secRate": 0,
+        "curHpPersent": 0,
+        "n1": 0,
+        "n2": 0,
+        "n3": 0,
+        "n4": 0,
+        "n5": 0,
+        "n6": 0,
+        "n7": 0,
+        "a1": 0,
+        "a2": 0,
+        "a3": 2550,
+        "a4": 0,
+        "a5": 0,
+        "a6": 0,
+        "c1": 0,
+        "c2": 0,
+        "c3": 0,
+        "c4": 0,
+        "c5": 0,
+        "c6": 0,
+        "s1": 1083,
+        "s2": 0,
+        "s3": 4143
+      }
+    },
+    {
+      "owninfo": {
+        "manidx": 8012142,
+        "idx": 7405,
+        "exp": 0,
+        "lv": 40,
+        "entExp": 0,
+        "entStep": 7,
+        "wpn": {
+          "manidx": 294060,
+          "idx": 10070,
+          "slot": 3,
+          "slots": [
+            {
+              "no": 0,
+              "jp": {
+                "manidx": 3802,
+                "jidx": 202,
+                "exp": 0,
+                "ent_st": 5,
+                "eq_manidx": 294060,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2022
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2024
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2025
+                  }
+                ]
+              }
+            },
+            {
+              "no": 1,
+              "jp": {
+                "manidx": 35254,
+                "jidx": 202,
+                "exp": 0,
+                "ent_st": 5,
+                "eq_manidx": 294060,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2022
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2023
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2025
+                  }
+                ]
+              }
+            },
+            {
+              "no": 2,
+              "jp": {
+                "manidx": 25393,
+                "jidx": 202,
+                "exp": 0,
+                "ent_st": 5,
+                "eq_manidx": 294060,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2022
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2024
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2026
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "amr": {
+          "manidx": 526689,
+          "idx": 12646,
+          "slot": 3,
+          "slots": [
+            {
+              "no": 0,
+              "jp": {
+                "manidx": 42815,
+                "jidx": 202,
+                "exp": 0,
+                "ent_st": 0,
+                "eq_manidx": 526689,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2022
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2023
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2025
+                  }
+                ]
+              }
+            },
+            {
+              "no": 1,
+              "jp": {
+                "manidx": 46548,
+                "jidx": 202,
+                "exp": 0,
+                "ent_st": 0,
+                "eq_manidx": 526689,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2021
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2023
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2025
+                  }
+                ]
+              }
+            },
+            {
+              "no": 2,
+              "jp": {
+                "manidx": 43441,
+                "jidx": 202,
+                "exp": 0,
+                "ent_st": 0,
+                "eq_manidx": 526689,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2021
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2024
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2026
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "asr1": {
+          "manidx": 729065,
+          "idx": 14592,
+          "slot": 3,
+          "slots": [
+            {
+              "no": 0,
+              "jp": {
+                "manidx": 24484,
+                "jidx": 203,
+                "exp": 0,
+                "ent_st": 0,
+                "eq_manidx": 729065,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2032
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2034
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2036
+                  }
+                ]
+              }
+            },
+            {
+              "no": 1,
+              "jp": {
+                "manidx": 24481,
+                "jidx": 203,
+                "exp": 0,
+                "ent_st": 0,
+                "eq_manidx": 729065,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2032
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2033
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2036
+                  }
+                ]
+              }
+            },
+            {
+              "no": 2,
+              "jp": {
+                "manidx": 38812,
+                "jidx": 202,
+                "exp": 0,
+                "ent_st": 0,
+                "eq_manidx": 729065,
+                "optlist": [
+                  {
+                    "type": 1,
+                    "idx": 2022
+                  },
+                  {
+                    "type": 2,
+                    "idx": 2024
+                  },
+                  {
+                    "type": 3,
+                    "idx": 2025
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "sprt1": 0,
+        "sprt2": 0,
+        "runeslots": [],
+        "PassiveSkillID": 7,
+        "PassiveSkillID2": 0,
+        "cosmanidx": 9038,
+        "costidx": 0,
+        "maxlv": 40
+      },
+      "abilities": {
+        "idx": 0,
+        "grade": 0,
+        "curHp": 89163,
+        "maxHp": 89163,
+        "atkPW": 34694,
+        "atkC": 0,
+        "dodgeC": 0,
+        "defPW": 3782,
+        "atkSPD": 119,
+        "movSPD": 100,
+        "criC": 15,
+        "minCriD": 110,
+        "maxCriD": 125,
+        "ccres": 23,
+        "skillprimary": 107405,
+        "skillprimary2": 0,
+        "skillsecondary": 107405,
+        "skillsecondaryChance": 0,
+        "skillpower": 598,
+        "resname": null,
+        "nAutoSkill": 0,
+        "helperUsingTimes": 20,
+        "skillcool": 16,
+        "summontime": 7,
+        "PassiveSkillID": 7,
+        "PassiveSkillID2": 0,
+        "resFD": 18,
+        "resID": 0,
+        "resPD": 0,
+        "resED": 33,
+        "resWD": 0,
+        "resAll": 0,
+        "resMelee": 9,
+        "resRanged": 16,
+        "addSkill2sec": 0,
+        "ignoreEnArmor": 22,
+        "decSkillCool": 0,
+        "decSkillCool2": 0,
+        "atkType": 2,
+        "heroType": 1,
+        "nAutoGameSpeed": 0,
+        "nHPFullResurrect": 0,
+        "nKillEmAll": 0,
+        "addHealingRate": 0,
+        "addDmgToHumanHero": 0,
+        "addDmgToFurryHero": 0,
+        "addDmgToDevilHero": 0,
+        "addDmgToSpiritHero": 0,
+        "addSupportDmg": 1302,
+        "silenceReg": 9,
+        "confusionReg": 0,
+        "stunReg": 0,
+        "lapidifyReg": 0,
+        "fearReg": 0,
+        "curseReg": 0,
+        "frostReg": 0,
+        "moveSpeedDownReg": 0,
+        "atkSpeedDownReg": 4,
+        "atkDownReg": 0,
+        "defDownReg": 0,
+        "secChance": 0,
+        "secPW": 0,
+        "spPW": 91,
+        "race": 0,
+        "addSkill2secRate": 0,
+        "curHpPersent": 0,
+        "n1": 0,
+        "n2": 0,
+        "n3": 0,
+        "n4": 0,
+        "n5": 0,
+        "n6": 0,
+        "n7": 0,
+        "a1": 0,
+        "a2": 3990,
+        "a3": 1280,
+        "a4": 70,
+        "a5": 755,
+        "a6": 0,
+        "c1": 0,
+        "c2": 0,
+        "c3": 0,
+        "c4": 0,
+        "c5": 0,
+        "c6": 0,
+        "s1": 0,
+        "s2": 0,
+        "s3": 2486
+      }
+    },
+    {
+      "owninfo": {
+        "manidx": 8012186,
+        "idx": 7418,
+        "exp": 0,
+        "lv": 30,
+        "entExp": 0,
+        "entStep": 7,
+        "wpn": {
+          "manidx": 294059,
+          "idx": 10124,
+          "slot": 3,
+          "slots": [
+            {
+              "no": 0,
+              "jp": null
+            },
+            {
+              "no": 1,
+              "jp": null
+            },
+            {
+              "no": 2,
+              "jp": null
+            }
+          ]
+        },
+        "amr": {
+          "manidx": 1478027,
+          "idx": 148,
+          "slot": 0,
+          "slots": []
+        },
+        "asr1": {
+          "manidx": 729073,
+          "idx": 14517,
+          "slot": 3,
+          "slots": [
+            {
+              "no": 0,
+              "jp": null
+            },
+            {
+              "no": 1,
+              "jp": null
+            },
+            {
+              "no": 2,
+              "jp": null
+            }
+          ]
+        },
+        "sprt1": 0,
+        "sprt2": 0,
+        "runeslots": [],
+        "PassiveSkillID": 1,
+        "PassiveSkillID2": 0,
+        "cosmanidx": 0,
+        "costidx": 0,
+        "maxlv": 30
+      },
+      "abilities": {
+        "idx": 0,
+        "grade": 0,
+        "curHp": 52987,
+        "maxHp": 52987,
+        "atkPW": 18227,
+        "atkC": 0,
+        "dodgeC": 7,
+        "defPW": 2281,
+        "atkSPD": 117,
+        "movSPD": 111,
+        "criC": 15,
+        "minCriD": 110,
+        "maxCriD": 125,
+        "ccres": 0,
+        "skillprimary": 107418,
+        "skillprimary2": 0,
+        "skillsecondary": 107418,
+        "skillsecondaryChance": 0,
+        "skillpower": 345,
+        "resname": null,
+        "nAutoSkill": 0,
+        "helperUsingTimes": 20,
+        "skillcool": 17,
+        "summontime": 8,
+        "PassiveSkillID": 1,
+        "PassiveSkillID2": 0,
+        "resFD": 0,
+        "resID": 0,
+        "resPD": 33,
+        "resED": 0,
+        "resWD": 0,
+        "resAll": 0,
+        "resMelee": 23,
+        "resRanged": 8,
+        "addSkill2sec": 0,
+        "ignoreEnArmor": 9,
+        "decSkillCool": 0,
+        "decSkillCool2": 0,
+        "atkType": 2,
+        "heroType": 1,
+        "nAutoGameSpeed": 0,
+        "nHPFullResurrect": 0,
+        "nKillEmAll": 0,
+        "addHealingRate": 3,
+        "addDmgToHumanHero": 11,
+        "addDmgToFurryHero": 0,
+        "addDmgToDevilHero": 0,
+        "addDmgToSpiritHero": 0,
+        "addSupportDmg": 0,
+        "silenceReg": 6,
+        "confusionReg": 0,
+        "stunReg": 0,
+        "lapidifyReg": 0,
+        "fearReg": 0,
+        "curseReg": 0,
+        "frostReg": 0,
+        "moveSpeedDownReg": 0,
+        "atkSpeedDownReg": 0,
+        "atkDownReg": 0,
+        "defDownReg": 0,
+        "secChance": 0,
+        "secPW": 0,
+        "spPW": 64,
+        "race": 0,
+        "addSkill2secRate": 0,
+        "curHpPersent": 0,
+        "n1": 0,
+        "n2": 0,
+        "n3": 0,
+        "n4": 0,
+        "n5": 0,
+        "n6": 0,
+        "n7": 0,
+        "a1": 0,
+        "a2": 0,
+        "a3": 0,
+        "a4": 0,
+        "a5": 0,
+        "a6": 0,
+        "c1": 0,
+        "c2": 0,
+        "c3": 0,
+        "c4": 0,
+        "c5": 0,
+        "c6": 0,
+        "s1": 0,
+        "s2": 0,
+        "s3": 0
+      }
+    },
+    {
+      "owninfo": {
+        "manidx": 8012146,
+        "idx": 140,
+        "exp": 0,
+        "lv": 30,
+        "entExp": 50,
+        "entStep": 0,
+        "wpn": null,
+        "amr": null,
+        "asr1": null,
+        "sprt1": 0,
+        "sprt2": 0,
+        "runeslots": [],
+        "PassiveSkillID": 0,
+        "PassiveSkillID2": 0,
+        "cosmanidx": 0,
+        "costidx": 0,
+        "maxlv": 30
+      },
+      "abilities": {
+        "idx": 0,
+        "grade": 0,
+        "curHp": 12117,
+        "maxHp": 12117,
+        "atkPW": 5405,
+        "atkC": 0,
+        "dodgeC": 0,
+        "defPW": 561,
+        "atkSPD": 100,
+        "movSPD": 100,
+        "criC": 15,
+        "minCriD": 110,
+        "maxCriD": 125,
+        "ccres": 0,
+        "skillprimary": 100140,
+        "skillprimary2": 0,
+        "skillsecondary": 100140,
+        "skillsecondaryChance": 0,
+        "skillpower": 0,
+        "resname": null,
+        "nAutoSkill": 0,
+        "helperUsingTimes": 20,
+        "skillcool": 19,
+        "summontime": 10,
+        "PassiveSkillID": 0,
+        "PassiveSkillID2": 0,
+        "resFD": 0,
+        "resID": 0,
+        "resPD": 0,
+        "resED": 0,
+        "resWD": 0,
+        "resAll": 0,
+        "resMelee": 0,
+        "resRanged": 0,
+        "addSkill2sec": 0,
+        "ignoreEnArmor": 0,
+        "decSkillCool": 0,
+        "decSkillCool2": 0,
+        "atkType": 2,
+        "heroType": 1,
+        "nAutoGameSpeed": 0,
+        "nHPFullResurrect": 0,
+        "nKillEmAll": 0,
+        "addHealingRate": 0,
+        "addDmgToHumanHero": 0,
+        "addDmgToFurryHero": 0,
+        "addDmgToDevilHero": 0,
+        "addDmgToSpiritHero": 0,
+        "addSupportDmg": 0,
+        "silenceReg": 0,
+        "confusionReg": 0,
+        "stunReg": 0,
+        "lapidifyReg": 0,
+        "fearReg": 0,
+        "curseReg": 0,
+        "frostReg": 0,
+        "moveSpeedDownReg": 0,
+        "atkSpeedDownReg": 0,
+        "atkDownReg": 0,
+        "defDownReg": 0,
+        "secChance": 0,
+        "secPW": 0,
+        "spPW": 64,
+        "race": 0,
+        "addSkill2secRate": 0,
+        "curHpPersent": 0,
+        "n1": 0,
+        "n2": 0,
+        "n3": 0,
+        "n4": 0,
+        "n5": 0,
+        "n6": 0,
+        "n7": 0,
+        "a1": 0,
+        "a2": 0,
+        "a3": 0,
+        "a4": 0,
+        "a5": 0,
+        "a6": 0,
+        "c1": 0,
+        "c2": 0,
+        "c3": 0,
+        "c4": 0,
+        "c5": 0,
+        "c6": 0,
+        "s1": 0,
+        "s2": 0,
+        "s3": 0
+      }
+    },
+    {
+      "owninfo": {
+        "manidx": 8012182,
+        "idx": 6407,
+        "exp": 0,
+        "lv": 30,
+        "entExp": 0,
+        "entStep": 0,
+        "wpn": null,
+        "amr": null,
+        "asr1": null,
+        "sprt1": 0,
+        "sprt2": 0,
+        "runeslots": [],
+        "PassiveSkillID": 0,
+        "PassiveSkillID2": 0,
+        "cosmanidx": 0,
+        "costidx": 0,
+        "maxlv": 30
+      },
+      "abilities": {
+        "idx": 0,
+        "grade": 0,
+        "curHp": 18681,
+        "maxHp": 18681,
+        "atkPW": 4431,
+        "atkC": 0,
+        "dodgeC": 0,
+        "defPW": 665,
+        "atkSPD": 100,
+        "movSPD": 100,
+        "criC": 17,
+        "minCriD": 115,
+        "maxCriD": 135,
+        "ccres": 0,
+        "skillprimary": 106407,
+        "skillprimary2": 0,
+        "skillsecondary": 106407,
+        "skillsecondaryChance": 0,
+        "skillpower": 0,
+        "resname": null,
+        "nAutoSkill": 0,
+        "helperUsingTimes": 20,
+        "skillcool": 18,
+        "summontime": 10,
+        "PassiveSkillID": 0,
+        "PassiveSkillID2": 0,
+        "resFD": 0,
+        "resID": 0,
+        "resPD": 0,
+        "resED": 0,
+        "resWD": 0,
+        "resAll": 0,
+        "resMelee": 0,
+        "resRanged": 0,
+        "addSkill2sec": 0,
+        "ignoreEnArmor": 0,
+        "decSkillCool": 0,
+        "decSkillCool2": 0,
+        "atkType": 1,
+        "heroType": 2,
+        "nAutoGameSpeed": 0,
+        "nHPFullResurrect": 0,
+        "nKillEmAll": 0,
+        "addHealingRate": 0,
+        "addDmgToHumanHero": 0,
+        "addDmgToFurryHero": 0,
+        "addDmgToDevilHero": 0,
+        "addDmgToSpiritHero": 0,
+        "addSupportDmg": 0,
+        "silenceReg": 0,
+        "confusionReg": 0,
+        "stunReg": 0,
+        "lapidifyReg": 0,
+        "fearReg": 0,
+        "curseReg": 0,
+        "frostReg": 0,
+        "moveSpeedDownReg": 0,
+        "atkSpeedDownReg": 0,
+        "atkDownReg": 0,
+        "defDownReg": 0,
+        "secChance": 0,
+        "secPW": 0,
+        "spPW": 64,
+        "race": 0,
+        "addSkill2secRate": 0,
+        "curHpPersent": 0,
+        "n1": 0,
+        "n2": 0,
+        "n3": 0,
+        "n4": 0,
+        "n5": 0,
+        "n6": 0,
+        "n7": 0,
+        "a1": 0,
+        "a2": 0,
+        "a3": 0,
+        "a4": 0,
+        "a5": 0,
+        "a6": 0,
+        "c1": 0,
+        "c2": 0,
+        "c3": 0,
+        "c4": 0,
+        "c5": 0,
+        "c6": 0,
+        "s1": 0,
+        "s2": 0,
+        "s3": 0
+      }
+    }
+  ],
+  "usingPetList": [
+    {
+      "owninfo": {
+        "manidx": 410471,
+        "idx": 2904,
+        "exp": 0,
+        "lv": 30,
+        "entExp": 0,
+        "entStep": 0,
+        "wpn": null,
+        "amr": null,
+        "asr1": null,
+        "sprt1": 0,
+        "sprt2": 0,
+        "runeslots": [],
+        "PassiveSkillID": 0,
+        "PassiveSkillID2": 0,
+        "cosmanidx": 0,
+        "costidx": 0,
+        "maxlv": 30
+      },
+      "abilities": {
+        "idx": 2904,
+        "grade": 0,
+        "curHp": 100,
+        "maxHp": 100,
+        "atkPW": 1749,
+        "atkC": 0,
+        "dodgeC": 0,
+        "defPW": 0,
+        "atkSPD": 100,
+        "movSPD": 100,
+        "criC": 9,
+        "minCriD": 110,
+        "maxCriD": 125,
+        "ccres": 0,
+        "skillprimary": 472,
+        "skillprimary2": 0,
+        "skillsecondary": 0,
+        "skillsecondaryChance": 0,
+        "skillpower": 0,
+        "resname": null,
+        "nAutoSkill": 0,
+        "helperUsingTimes": 0,
+        "skillcool": 0,
+        "summontime": 0,
+        "PassiveSkillID": 0,
+        "PassiveSkillID2": 0,
+        "resFD": 0,
+        "resID": 0,
+        "resPD": 0,
+        "resED": 0,
+        "resWD": 0,
+        "resAll": 0,
+        "resMelee": 0,
+        "resRanged": 0,
+        "addSkill2sec": 0,
+        "ignoreEnArmor": 0,
+        "decSkillCool": 0,
+        "decSkillCool2": 0,
+        "atkType": 1,
+        "heroType": 1,
+        "nAutoGameSpeed": 0,
+        "nHPFullResurrect": 0,
+        "nKillEmAll": 0,
+        "addHealingRate": 0,
+        "addDmgToHumanHero": 0,
+        "addDmgToFurryHero": 0,
+        "addDmgToDevilHero": 0,
+        "addDmgToSpiritHero": 0,
+        "addSupportDmg": 0,
+        "silenceReg": 0,
+        "confusionReg": 0,
+        "stunReg": 0,
+        "lapidifyReg": 0,
+        "fearReg": 0,
+        "curseReg": 0,
+        "frostReg": 0,
+        "moveSpeedDownReg": 0,
+        "atkSpeedDownReg": 0,
+        "atkDownReg": 0,
+        "defDownReg": 0,
+        "secChance": 0,
+        "secPW": 0,
+        "spPW": 0,
+        "race": 0,
+        "addSkill2secRate": 0,
+        "curHpPersent": 0,
+        "n1": 0,
+        "n2": 0,
+        "n3": 0,
+        "n4": 0,
+        "n5": 0,
+        "n6": 0,
+        "n7": 0,
+        "a1": 0,
+        "a2": 0,
+        "a3": 0,
+        "a4": 0,
+        "a5": 0,
+        "a6": 0,
+        "c1": 0,
+        "c2": 0,
+        "c3": 0,
+        "c4": 0,
+        "c5": 0,
+        "c6": 0,
+        "s1": 0,
+        "s2": 0,
+        "s3": 0
+      }
+    }
+  ],
+  "stagelist": [
+    {
+      "no": 1,
+      "startposidx": 0,
+      "resname": "Ruins_yellow_bright_boss_B",
+      "manualCamera": {
+        "D": 18,
+        "H": -150,
+        "V": 38
+      },
+      "autoCamera": {
+        "D": 18,
+        "H": -150,
+        "V": 22
+      },
+      "monlist": [
+        {
+          "posindex": 21,
+          "usecnt": 1,
+          "monidx": 335,
+          "mtype": 2,
+          "gold": 51,
+          "exp": 701,
+          "scalerate": 150,
+          "scalemin": 150,
+          "scalemax": 150,
+          "aprType": 2,
+          "aprDelay": 7,
+          "regenCnt": 0,
+          "time": 60,
+          "tidx": 0
+        },
+        {
+          "posindex": 22,
+          "usecnt": 1,
+          "monidx": 331,
+          "mtype": 0,
+          "gold": 51,
+          "exp": 701,
+          "scalerate": 100,
+          "scalemin": 100,
+          "scalemax": 100,
+          "aprType": 2,
+          "aprDelay": 7,
+          "regenCnt": 0,
+          "time": 60,
+          "tidx": 0
+        },
+        {
+          "posindex": 23,
+          "usecnt": 1,
+          "monidx": 333,
+          "mtype": 0,
+          "gold": 51,
+          "exp": 701,
+          "scalerate": 100,
+          "scalemin": 100,
+          "scalemax": 100,
+          "aprType": 2,
+          "aprDelay": 7,
+          "regenCnt": 0,
+          "time": 60,
+          "tidx": 0
+        },
+        {
+          "posindex": 24,
+          "usecnt": 1,
+          "monidx": 332,
+          "mtype": 0,
+          "gold": 51,
+          "exp": 701,
+          "scalerate": 100,
+          "scalemin": 100,
+          "scalemax": 100,
+          "aprType": 2,
+          "aprDelay": 8,
+          "regenCnt": 3,
+          "time": 60,
+          "tidx": 0
+        },
+        {
+          "posindex": 25,
+          "usecnt": 1,
+          "monidx": 334,
+          "mtype": 0,
+          "gold": 51,
+          "exp": 701,
+          "scalerate": 100,
+          "scalemin": 100,
+          "scalemax": 100,
+          "aprType": 2,
+          "aprDelay": 9,
+          "regenCnt": 3,
+          "time": 60,
+          "tidx": 0
+        },
+        {
+          "posindex": 26,
+          "usecnt": 1,
+          "monidx": 331,
+          "mtype": 0,
+          "gold": 51,
+          "exp": 701,
+          "scalerate": 100,
+          "scalemin": 100,
+          "scalemax": 100,
+          "aprType": 2,
+          "aprDelay": 9,
+          "regenCnt": 3,
+          "time": 60,
+          "tidx": 0
+        },
+        {
+          "posindex": 27,
+          "usecnt": 1,
+          "monidx": 333,
+          "mtype": 0,
+          "gold": 51,
+          "exp": 701,
+          "scalerate": 100,
+          "scalemin": 100,
+          "scalemax": 100,
+          "aprType": 2,
+          "aprDelay": 13,
+          "regenCnt": 3,
+          "time": 60,
+          "tidx": 0
+        },
+        {
+          "posindex": 28,
+          "usecnt": 1,
+          "monidx": 332,
+          "mtype": 0,
+          "gold": 51,
+          "exp": 701,
+          "scalerate": 100,
+          "scalemin": 100,
+          "scalemax": 100,
+          "aprType": 2,
+          "aprDelay": 14,
+          "regenCnt": 3,
+          "time": 60,
+          "tidx": 0
+        },
+        {
+          "posindex": 29,
+          "usecnt": 1,
+          "monidx": 334,
+          "mtype": 0,
+          "gold": 51,
+          "exp": 701,
+          "scalerate": 100,
+          "scalemin": 100,
+          "scalemax": 100,
+          "aprType": 2,
+          "aprDelay": 14,
+          "regenCnt": 3,
+          "time": 60,
+          "tidx": 0
+        },
+        {
+          "posindex": 30,
+          "usecnt": 1,
+          "monidx": 331,
+          "mtype": 0,
+          "gold": 51,
+          "exp": 701,
+          "scalerate": 100,
+          "scalemin": 100,
+          "scalemax": 100,
+          "aprType": 2,
+          "aprDelay": 15,
+          "regenCnt": 3,
+          "time": 60,
+          "tidx": 0
+        },
+        {
+          "posindex": 1000,
+          "usecnt": 1,
+          "monidx": 336,
+          "mtype": 3,
+          "gold": 3800,
+          "exp": 21741,
+          "scalerate": 200,
+          "scalemin": 0,
+          "scalemax": 0,
+          "aprType": 1,
+          "aprDelay": 0,
+          "regenCnt": 0,
+          "time": 60,
+          "tidx": 0
+        }
+      ]
+    }
+  ],
+  "monabillist": [
+    {
+      "idx": 335,
+      "grade": 0,
+      "curHp": 411868,
+      "maxHp": 411868,
+      "atkPW": 4634,
+      "atkC": 0,
+      "dodgeC": 0,
+      "defPW": 3393,
+      "atkSPD": 100,
+      "movSPD": 0,
+      "criC": 0,
+      "minCriD": 0,
+      "maxCriD": 0,
+      "ccres": 0,
+      "skillprimary": 20179,
+      "skillprimary2": 0,
+      "skillsecondary": 10154,
+      "skillsecondaryChance": 100,
+      "skillpower": 0,
+      "resname": "179_Sinsia_SunLight",
+      "nAutoSkill": 0,
+      "helperUsingTimes": 0,
+      "skillcool": 0,
+      "summontime": 0,
+      "PassiveSkillID": 0,
+      "PassiveSkillID2": 0,
+      "resFD": 0,
+      "resID": 0,
+      "resPD": 0,
+      "resED": 0,
+      "resWD": 0,
+      "resAll": 0,
+      "resMelee": 0,
+      "resRanged": 0,
+      "addSkill2sec": 0,
+      "ignoreEnArmor": 0,
+      "decSkillCool": 0,
+      "decSkillCool2": 0,
+      "atkType": 1,
+      "heroType": 1,
+      "nAutoGameSpeed": 0,
+      "nHPFullResurrect": 0,
+      "nKillEmAll": 0,
+      "addHealingRate": 0,
+      "addDmgToHumanHero": 0,
+      "addDmgToFurryHero": 0,
+      "addDmgToDevilHero": 0,
+      "addDmgToSpiritHero": 0,
+      "addSupportDmg": 0,
+      "silenceReg": 0,
+      "confusionReg": 0,
+      "stunReg": 0,
+      "lapidifyReg": 0,
+      "fearReg": 0,
+      "curseReg": 0,
+      "frostReg": 0,
+      "moveSpeedDownReg": 0,
+      "atkSpeedDownReg": 0,
+      "atkDownReg": 0,
+      "defDownReg": 0,
+      "secChance": 0,
+      "secPW": 0,
+      "spPW": 0,
+      "race": 1,
+      "addSkill2secRate": 0,
+      "curHpPersent": 0,
+      "n1": 0,
+      "n2": 0,
+      "n3": 0,
+      "n4": 0,
+      "n5": 0,
+      "n6": 0,
+      "n7": 0,
+      "a1": 0,
+      "a2": 0,
+      "a3": 0,
+      "a4": 0,
+      "a5": 0,
+      "a6": 0,
+      "c1": 0,
+      "c2": 0,
+      "c3": 0,
+      "c4": 0,
+      "c5": 0,
+      "c6": 0,
+      "s1": 0,
+      "s2": 0,
+      "s3": 0
+    },
+    {
+      "idx": 331,
+      "grade": 0,
+      "curHp": 98843,
+      "maxHp": 98843,
+      "atkPW": 4321,
+      "atkC": 0,
+      "dodgeC": 0,
+      "defPW": 3083,
+      "atkSPD": 100,
+      "movSPD": 0,
+      "criC": 0,
+      "minCriD": 0,
+      "maxCriD": 0,
+      "ccres": 0,
+      "skillprimary": 20016,
+      "skillprimary2": 0,
+      "skillsecondary": 20016,
+      "skillsecondaryChance": 100,
+      "skillpower": 0,
+      "resname": "16_Skeleton_General",
+      "nAutoSkill": 0,
+      "helperUsingTimes": 0,
+      "skillcool": 0,
+      "summontime": 0,
+      "PassiveSkillID": 0,
+      "PassiveSkillID2": 0,
+      "resFD": 0,
+      "resID": 0,
+      "resPD": 0,
+      "resED": 0,
+      "resWD": 0,
+      "resAll": 0,
+      "resMelee": 0,
+      "resRanged": 0,
+      "addSkill2sec": 0,
+      "ignoreEnArmor": 0,
+      "decSkillCool": 0,
+      "decSkillCool2": 0,
+      "atkType": 1,
+      "heroType": 1,
+      "nAutoGameSpeed": 0,
+      "nHPFullResurrect": 0,
+      "nKillEmAll": 0,
+      "addHealingRate": 0,
+      "addDmgToHumanHero": 0,
+      "addDmgToFurryHero": 0,
+      "addDmgToDevilHero": 0,
+      "addDmgToSpiritHero": 0,
+      "addSupportDmg": 0,
+      "silenceReg": 0,
+      "confusionReg": 0,
+      "stunReg": 0,
+      "lapidifyReg": 0,
+      "fearReg": 0,
+      "curseReg": 0,
+      "frostReg": 0,
+      "moveSpeedDownReg": 0,
+      "atkSpeedDownReg": 0,
+      "atkDownReg": 0,
+      "defDownReg": 0,
+      "secChance": 0,
+      "secPW": 0,
+      "spPW": 0,
+      "race": 3,
+      "addSkill2secRate": 0,
+      "curHpPersent": 0,
+      "n1": 0,
+      "n2": 0,
+      "n3": 0,
+      "n4": 0,
+      "n5": 0,
+      "n6": 0,
+      "n7": 0,
+      "a1": 0,
+      "a2": 0,
+      "a3": 0,
+      "a4": 0,
+      "a5": 0,
+      "a6": 0,
+      "c1": 0,
+      "c2": 0,
+      "c3": 0,
+      "c4": 0,
+      "c5": 0,
+      "c6": 0,
+      "s1": 0,
+      "s2": 0,
+      "s3": 0
+    },
+    {
+      "idx": 333,
+      "grade": 0,
+      "curHp": 70014,
+      "maxHp": 70014,
+      "atkPW": 4449,
+      "atkC": 0,
+      "dodgeC": 0,
+      "defPW": 3083,
+      "atkSPD": 100,
+      "movSPD": 0,
+      "criC": 0,
+      "minCriD": 0,
+      "maxCriD": 0,
+      "ccres": 0,
+      "skillprimary": 20020,
+      "skillprimary2": 0,
+      "skillsecondary": 20020,
+      "skillsecondaryChance": 100,
+      "skillpower": 0,
+      "resname": "20_Skeleton_Captian",
+      "nAutoSkill": 0,
+      "helperUsingTimes": 0,
+      "skillcool": 0,
+      "summontime": 0,
+      "PassiveSkillID": 0,
+      "PassiveSkillID2": 0,
+      "resFD": 0,
+      "resID": 0,
+      "resPD": 0,
+      "resED": 0,
+      "resWD": 0,
+      "resAll": 0,
+      "resMelee": 0,
+      "resRanged": 0,
+      "addSkill2sec": 0,
+      "ignoreEnArmor": 0,
+      "decSkillCool": 0,
+      "decSkillCool2": 0,
+      "atkType": 2,
+      "heroType": 1,
+      "nAutoGameSpeed": 0,
+      "nHPFullResurrect": 0,
+      "nKillEmAll": 0,
+      "addHealingRate": 0,
+      "addDmgToHumanHero": 0,
+      "addDmgToFurryHero": 0,
+      "addDmgToDevilHero": 0,
+      "addDmgToSpiritHero": 0,
+      "addSupportDmg": 0,
+      "silenceReg": 0,
+      "confusionReg": 0,
+      "stunReg": 0,
+      "lapidifyReg": 0,
+      "fearReg": 0,
+      "curseReg": 0,
+      "frostReg": 0,
+      "moveSpeedDownReg": 0,
+      "atkSpeedDownReg": 0,
+      "atkDownReg": 0,
+      "defDownReg": 0,
+      "secChance": 0,
+      "secPW": 0,
+      "spPW": 0,
+      "race": 3,
+      "addSkill2secRate": 0,
+      "curHpPersent": 0,
+      "n1": 0,
+      "n2": 0,
+      "n3": 0,
+      "n4": 0,
+      "n5": 0,
+      "n6": 0,
+      "n7": 0,
+      "a1": 0,
+      "a2": 0,
+      "a3": 0,
+      "a4": 0,
+      "a5": 0,
+      "a6": 0,
+      "c1": 0,
+      "c2": 0,
+      "c3": 0,
+      "c4": 0,
+      "c5": 0,
+      "c6": 0,
+      "s1": 0,
+      "s2": 0,
+      "s3": 0
+    },
+    {
+      "idx": 332,
+      "grade": 0,
+      "curHp": 98843,
+      "maxHp": 98843,
+      "atkPW": 4321,
+      "atkC": 0,
+      "dodgeC": 0,
+      "defPW": 3083,
+      "atkSPD": 100,
+      "movSPD": 0,
+      "criC": 0,
+      "minCriD": 0,
+      "maxCriD": 0,
+      "ccres": 0,
+      "skillprimary": 20170,
+      "skillprimary2": 0,
+      "skillsecondary": 20170,
+      "skillsecondaryChance": 100,
+      "skillpower": 0,
+      "resname": "170_Poison_Rage",
+      "nAutoSkill": 0,
+      "helperUsingTimes": 0,
+      "skillcool": 0,
+      "summontime": 0,
+      "PassiveSkillID": 0,
+      "PassiveSkillID2": 0,
+      "resFD": 0,
+      "resID": 0,
+      "resPD": 0,
+      "resED": 0,
+      "resWD": 0,
+      "resAll": 0,
+      "resMelee": 0,
+      "resRanged": 0,
+      "addSkill2sec": 0,
+      "ignoreEnArmor": 0,
+      "decSkillCool": 0,
+      "decSkillCool2": 0,
+      "atkType": 1,
+      "heroType": 1,
+      "nAutoGameSpeed": 0,
+      "nHPFullResurrect": 0,
+      "nKillEmAll": 0,
+      "addHealingRate": 0,
+      "addDmgToHumanHero": 0,
+      "addDmgToFurryHero": 0,
+      "addDmgToDevilHero": 0,
+      "addDmgToSpiritHero": 0,
+      "addSupportDmg": 0,
+      "silenceReg": 0,
+      "confusionReg": 0,
+      "stunReg": 0,
+      "lapidifyReg": 0,
+      "fearReg": 0,
+      "curseReg": 0,
+      "frostReg": 0,
+      "moveSpeedDownReg": 0,
+      "atkSpeedDownReg": 0,
+      "atkDownReg": 0,
+      "defDownReg": 0,
+      "secChance": 0,
+      "secPW": 0,
+      "spPW": 0,
+      "race": 5,
+      "addSkill2secRate": 0,
+      "curHpPersent": 0,
+      "n1": 0,
+      "n2": 0,
+      "n3": 0,
+      "n4": 0,
+      "n5": 0,
+      "n6": 0,
+      "n7": 0,
+      "a1": 0,
+      "a2": 0,
+      "a3": 0,
+      "a4": 0,
+      "a5": 0,
+      "a6": 0,
+      "c1": 0,
+      "c2": 0,
+      "c3": 0,
+      "c4": 0,
+      "c5": 0,
+      "c6": 0,
+      "s1": 0,
+      "s2": 0,
+      "s3": 0
+    },
+    {
+      "idx": 334,
+      "grade": 0,
+      "curHp": 70014,
+      "maxHp": 70014,
+      "atkPW": 4449,
+      "atkC": 0,
+      "dodgeC": 0,
+      "defPW": 3083,
+      "atkSPD": 100,
+      "movSPD": 0,
+      "criC": 0,
+      "minCriD": 0,
+      "maxCriD": 0,
+      "ccres": 0,
+      "skillprimary": 20130,
+      "skillprimary2": 0,
+      "skillsecondary": 20130,
+      "skillsecondaryChance": 100,
+      "skillpower": 0,
+      "resname": "130_Groll_ThunderGodMage",
+      "nAutoSkill": 0,
+      "helperUsingTimes": 0,
+      "skillcool": 0,
+      "summontime": 0,
+      "PassiveSkillID": 0,
+      "PassiveSkillID2": 0,
+      "resFD": 0,
+      "resID": 0,
+      "resPD": 0,
+      "resED": 0,
+      "resWD": 0,
+      "resAll": 0,
+      "resMelee": 0,
+      "resRanged": 0,
+      "addSkill2sec": 0,
+      "ignoreEnArmor": 0,
+      "decSkillCool": 0,
+      "decSkillCool2": 0,
+      "atkType": 2,
+      "heroType": 1,
+      "nAutoGameSpeed": 0,
+      "nHPFullResurrect": 0,
+      "nKillEmAll": 0,
+      "addHealingRate": 0,
+      "addDmgToHumanHero": 0,
+      "addDmgToFurryHero": 0,
+      "addDmgToDevilHero": 0,
+      "addDmgToSpiritHero": 0,
+      "addSupportDmg": 0,
+      "silenceReg": 0,
+      "confusionReg": 0,
+      "stunReg": 0,
+      "lapidifyReg": 0,
+      "fearReg": 0,
+      "curseReg": 0,
+      "frostReg": 0,
+      "moveSpeedDownReg": 0,
+      "atkSpeedDownReg": 0,
+      "atkDownReg": 0,
+      "defDownReg": 0,
+      "secChance": 0,
+      "secPW": 0,
+      "spPW": 0,
+      "race": 3,
+      "addSkill2secRate": 0,
+      "curHpPersent": 0,
+      "n1": 0,
+      "n2": 0,
+      "n3": 0,
+      "n4": 0,
+      "n5": 0,
+      "n6": 0,
+      "n7": 0,
+      "a1": 0,
+      "a2": 0,
+      "a3": 0,
+      "a4": 0,
+      "a5": 0,
+      "a6": 0,
+      "c1": 0,
+      "c2": 0,
+      "c3": 0,
+      "c4": 0,
+      "c5": 0,
+      "c6": 0,
+      "s1": 0,
+      "s2": 0,
+      "s3": 0
+    },
+    {
+      "idx": 336,
+      "grade": 0,
+      "curHp": 1317986,
+      "maxHp": 1317986,
+      "atkPW": 5757,
+      "atkC": 0,
+      "dodgeC": 0,
+      "defPW": 3703,
+      "atkSPD": 100,
+      "movSPD": 0,
+      "criC": 0,
+      "minCriD": 0,
+      "maxCriD": 0,
+      "ccres": 0,
+      "skillprimary": 20262,
+      "skillprimary2": 0,
+      "skillsecondary": 20262,
+      "skillsecondaryChance": 100,
+      "skillpower": 0,
+      "resname": "262_ReaperGrave",
+      "nAutoSkill": 0,
+      "helperUsingTimes": 0,
+      "skillcool": 0,
+      "summontime": 0,
+      "PassiveSkillID": 0,
+      "PassiveSkillID2": 0,
+      "resFD": 0,
+      "resID": 0,
+      "resPD": 0,
+      "resED": 0,
+      "resWD": 0,
+      "resAll": 0,
+      "resMelee": 0,
+      "resRanged": 0,
+      "addSkill2sec": 0,
+      "ignoreEnArmor": 0,
+      "decSkillCool": 0,
+      "decSkillCool2": 0,
+      "atkType": 1,
+      "heroType": 1,
+      "nAutoGameSpeed": 0,
+      "nHPFullResurrect": 0,
+      "nKillEmAll": 0,
+      "addHealingRate": 0,
+      "addDmgToHumanHero": 0,
+      "addDmgToFurryHero": 0,
+      "addDmgToDevilHero": 0,
+      "addDmgToSpiritHero": 0,
+      "addSupportDmg": 0,
+      "silenceReg": 0,
+      "confusionReg": 0,
+      "stunReg": 0,
+      "lapidifyReg": 0,
+      "fearReg": 0,
+      "curseReg": 0,
+      "frostReg": 0,
+      "moveSpeedDownReg": 0,
+      "atkSpeedDownReg": 0,
+      "atkDownReg": 0,
+      "defDownReg": 0,
+      "secChance": 0,
+      "secPW": 0,
+      "spPW": 0,
+      "race": 3,
+      "addSkill2secRate": 0,
+      "curHpPersent": 0,
+      "n1": 0,
+      "n2": 0,
+      "n3": 0,
+      "n4": 0,
+      "n5": 0,
+      "n6": 0,
+      "n7": 0,
+      "a1": 0,
+      "a2": 0,
+      "a3": 0,
+      "a4": 0,
+      "a5": 0,
+      "a6": 0,
+      "c1": 0,
+      "c2": 0,
+      "c3": 0,
+      "c4": 0,
+      "c5": 0,
+      "c6": 0,
+      "s1": 0,
+      "s2": 0,
+      "s3": 0
+    }
+  ],
+  "rndboxlist": [],
+  "playerbufflist": [],
+  "bAppearGoblin": true,
+  "goblin": {
+    "abilities": {
+      "idx": 0,
+      "grade": 0,
+      "curHp": 0,
+      "maxHp": 166516,
+      "atkPW": 0,
+      "atkC": 0,
+      "dodgeC": 0,
+      "defPW": 0,
+      "atkSPD": 0,
+      "movSPD": 7,
+      "criC": 0,
+      "minCriD": 0,
+      "maxCriD": 0,
+      "ccres": 0,
+      "skillprimary": 0,
+      "skillprimary2": 0,
+      "skillsecondary": 0,
+      "skillsecondaryChance": 0,
+      "skillpower": 0,
+      "resname": "265_GoblinThiefC",
+      "nAutoSkill": 0,
+      "helperUsingTimes": 0,
+      "skillcool": 0,
+      "summontime": 0,
+      "PassiveSkillID": 0,
+      "PassiveSkillID2": 0,
+      "resFD": 0,
+      "resID": 0,
+      "resPD": 0,
+      "resED": 0,
+      "resWD": 0,
+      "resAll": 0,
+      "resMelee": 0,
+      "resRanged": 0,
+      "addSkill2sec": 0,
+      "ignoreEnArmor": 0,
+      "decSkillCool": 0,
+      "decSkillCool2": 0,
+      "atkType": 1,
+      "heroType": 1,
+      "nAutoGameSpeed": 0,
+      "nHPFullResurrect": 0,
+      "nKillEmAll": 0,
+      "addHealingRate": 0,
+      "addDmgToHumanHero": 0,
+      "addDmgToFurryHero": 0,
+      "addDmgToDevilHero": 0,
+      "addDmgToSpiritHero": 0,
+      "addSupportDmg": 0,
+      "silenceReg": 0,
+      "confusionReg": 0,
+      "stunReg": 0,
+      "lapidifyReg": 0,
+      "fearReg": 0,
+      "curseReg": 0,
+      "frostReg": 0,
+      "moveSpeedDownReg": 0,
+      "atkSpeedDownReg": 0,
+      "atkDownReg": 0,
+      "defDownReg": 0,
+      "secChance": 0,
+      "secPW": 0,
+      "spPW": 0,
+      "race": 0,
+      "addSkill2secRate": 0,
+      "curHpPersent": 0,
+      "n1": 0,
+      "n2": 0,
+      "n3": 0,
+      "n4": 0,
+      "n5": 0,
+      "n6": 0,
+      "n7": 0,
+      "a1": 0,
+      "a2": 0,
+      "a3": 0,
+      "a4": 0,
+      "a5": 0,
+      "a6": 0,
+      "c1": 0,
+      "c2": 0,
+      "c3": 0,
+      "c4": 0,
+      "c5": 0,
+      "c6": 0,
+      "s1": 0,
+      "s2": 0,
+      "s3": 0
+    },
+    "goldMax": 146,
+    "timeLimit": 15,
+    "dropArtifactList": [
+      {
+        "type": 28,
+        "v1": 2,
+        "v2": 14,
+        "v3": 0
+      },
+      {
+        "type": 3,
+        "v1": 10,
+        "v2": 10,
+        "v3": 0
+      }
+    ],
+    "salyCode": "%6^0"
+  },
+  "maxGold": 5537,
+  "guildBuffList": []
+}
+完成副本(request):
+{
+  "cmtIIB": "",
+  "dticket": 11908,
+  "bclear": true,
+  "clrcode": "%6^01KE51abU",
+  "clrtimesecs": 19,
+  "gainboxlist": [],
+  "slaymonsterlist": [
+    {
+      "stageno": 1,
+      "posindex": 29,
+      "cnt": 1
+    },
+    {
+      "stageno": 1,
+      "posindex": 26,
+      "cnt": 1
+    },
+    {
+      "stageno": 1,
+      "posindex": 30,
+      "cnt": 1
+    },
+    {
+      "stageno": 1,
+      "posindex": 24,
+      "cnt": 1
+    },
+    {
+      "stageno": 1,
+      "posindex": 22,
+      "cnt": 1
+    },
+    {
+      "stageno": 1,
+      "posindex": 21,
+      "cnt": 1
+    },
+    {
+      "stageno": 1,
+      "posindex": 23,
+      "cnt": 1
+    },
+    {
+      "stageno": 1,
+      "posindex": 25,
+      "cnt": 1
+    },
+    {
+      "stageno": 1,
+      "posindex": 28,
+      "cnt": 1
+    },
+    {
+      "stageno": 1,
+      "posindex": 27,
+      "cnt": 1
+    },
+    {
+      "stageno": 1,
+      "posindex": 1000,
+      "cnt": 1
+    }
+  ],
+  "combatGoblinInfo": {
+    "gainGold": 146,
+    "bSlay": true,
+    "salyCode": "%6^0"
+  },
+  "gainGold": 4456,
+  "gIidx": 4,
+  "lIdx": 48,
+  "ctoken": "10832480",
+  "version": "1.6.3",
+  "langCode": "zh",
+  "sessionKey": "eea1d4c0221356a6ea84cb656829caca15218a9c",
+  "sq": 19,
+  "countryCode": "CN"
+}
+完成副本(response):
+{
+  "bPlayerLvUp": false,
+  "curPlayerLevelStatus": {
+    "curLv": 70,
+    "curExp": 0,
+    "maxExp": 0
+  },
+  "playerLvUpReward_Dia": 0,
+  "playerLvUpReward_Key": 0,
+  "bclear": true,
+  "clrtimesecs": 19,
+  "starGrade": 3,
+  "preHeroes": [
+    {
+      "manidx": 8012170,
+      "idx": 7404,
+      "exp": 0,
+      "lv": 42,
+      "entExp": 0,
+      "entStep": 7,
+      "wpn": {
+        "manidx": 294071,
+        "idx": 10882,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": {
+              "manidx": 23837,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 294071,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2032
+                },
+                {
+                  "type": 2,
+                  "idx": 2033
+                },
+                {
+                  "type": 3,
+                  "idx": 2035
+                }
+              ]
+            }
+          },
+          {
+            "no": 1,
+            "jp": {
+              "manidx": 31667,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 294071,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2032
+                },
+                {
+                  "type": 2,
+                  "idx": 2033
+                },
+                {
+                  "type": 3,
+                  "idx": 2035
+                }
+              ]
+            }
+          },
+          {
+            "no": 2,
+            "jp": {
+              "manidx": 22639,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 294071,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2032
+                },
+                {
+                  "type": 2,
+                  "idx": 2034
+                },
+                {
+                  "type": 3,
+                  "idx": 2035
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "amr": {
+        "manidx": 524021,
+        "idx": 12308,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": {
+              "manidx": 29496,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 524021,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2021
+                },
+                {
+                  "type": 2,
+                  "idx": 2023
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          },
+          {
+            "no": 1,
+            "jp": {
+              "manidx": 50566,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 524021,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2021
+                },
+                {
+                  "type": 2,
+                  "idx": 2023
+                },
+                {
+                  "type": 3,
+                  "idx": 2026
+                }
+              ]
+            }
+          },
+          {
+            "no": 2,
+            "jp": {
+              "manidx": 51209,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 524021,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2021
+                },
+                {
+                  "type": 2,
+                  "idx": 2023
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "asr1": {
+        "manidx": 729068,
+        "idx": 14386,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": {
+              "manidx": 23762,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 729068,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2032
+                },
+                {
+                  "type": 2,
+                  "idx": 2034
+                },
+                {
+                  "type": 3,
+                  "idx": 2036
+                }
+              ]
+            }
+          },
+          {
+            "no": 1,
+            "jp": {
+              "manidx": 17693,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 729068,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2031
+                },
+                {
+                  "type": 2,
+                  "idx": 2033
+                },
+                {
+                  "type": 3,
+                  "idx": 2036
+                }
+              ]
+            }
+          },
+          {
+            "no": 2,
+            "jp": {
+              "manidx": 11697,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 729068,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2031
+                },
+                {
+                  "type": 2,
+                  "idx": 2033
+                },
+                {
+                  "type": 3,
+                  "idx": 2036
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "sprt1": 0,
+      "sprt2": 0,
+      "runeslots": [],
+      "PassiveSkillID": 22,
+      "PassiveSkillID2": 0,
+      "cosmanidx": 6573,
+      "costidx": 0,
+      "maxlv": 42
+    },
+    {
+      "manidx": 8012142,
+      "idx": 7405,
+      "exp": 0,
+      "lv": 40,
+      "entExp": 0,
+      "entStep": 7,
+      "wpn": {
+        "manidx": 294060,
+        "idx": 10070,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": {
+              "manidx": 3802,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 294060,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2022
+                },
+                {
+                  "type": 2,
+                  "idx": 2024
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          },
+          {
+            "no": 1,
+            "jp": {
+              "manidx": 35254,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 294060,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2022
+                },
+                {
+                  "type": 2,
+                  "idx": 2023
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          },
+          {
+            "no": 2,
+            "jp": {
+              "manidx": 25393,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 294060,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2022
+                },
+                {
+                  "type": 2,
+                  "idx": 2024
+                },
+                {
+                  "type": 3,
+                  "idx": 2026
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "amr": {
+        "manidx": 526689,
+        "idx": 12646,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": {
+              "manidx": 42815,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 526689,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2022
+                },
+                {
+                  "type": 2,
+                  "idx": 2023
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          },
+          {
+            "no": 1,
+            "jp": {
+              "manidx": 46548,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 526689,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2021
+                },
+                {
+                  "type": 2,
+                  "idx": 2023
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          },
+          {
+            "no": 2,
+            "jp": {
+              "manidx": 43441,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 526689,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2021
+                },
+                {
+                  "type": 2,
+                  "idx": 2024
+                },
+                {
+                  "type": 3,
+                  "idx": 2026
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "asr1": {
+        "manidx": 729065,
+        "idx": 14592,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": {
+              "manidx": 24484,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 729065,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2032
+                },
+                {
+                  "type": 2,
+                  "idx": 2034
+                },
+                {
+                  "type": 3,
+                  "idx": 2036
+                }
+              ]
+            }
+          },
+          {
+            "no": 1,
+            "jp": {
+              "manidx": 24481,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 729065,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2032
+                },
+                {
+                  "type": 2,
+                  "idx": 2033
+                },
+                {
+                  "type": 3,
+                  "idx": 2036
+                }
+              ]
+            }
+          },
+          {
+            "no": 2,
+            "jp": {
+              "manidx": 38812,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 729065,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2022
+                },
+                {
+                  "type": 2,
+                  "idx": 2024
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "sprt1": 0,
+      "sprt2": 0,
+      "runeslots": [],
+      "PassiveSkillID": 7,
+      "PassiveSkillID2": 0,
+      "cosmanidx": 9038,
+      "costidx": 0,
+      "maxlv": 40
+    },
+    {
+      "manidx": 8012186,
+      "idx": 7418,
+      "exp": 0,
+      "lv": 30,
+      "entExp": 0,
+      "entStep": 7,
+      "wpn": {
+        "manidx": 294059,
+        "idx": 10124,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": null
+          },
+          {
+            "no": 1,
+            "jp": null
+          },
+          {
+            "no": 2,
+            "jp": null
+          }
+        ]
+      },
+      "amr": {
+        "manidx": 1478027,
+        "idx": 148,
+        "slot": 0,
+        "slots": []
+      },
+      "asr1": {
+        "manidx": 729073,
+        "idx": 14517,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": null
+          },
+          {
+            "no": 1,
+            "jp": null
+          },
+          {
+            "no": 2,
+            "jp": null
+          }
+        ]
+      },
+      "sprt1": 0,
+      "sprt2": 0,
+      "runeslots": [],
+      "PassiveSkillID": 1,
+      "PassiveSkillID2": 0,
+      "cosmanidx": 0,
+      "costidx": 0,
+      "maxlv": 30
+    },
+    {
+      "manidx": 8012146,
+      "idx": 140,
+      "exp": 0,
+      "lv": 30,
+      "entExp": 50,
+      "entStep": 0,
+      "wpn": null,
+      "amr": null,
+      "asr1": null,
+      "sprt1": 0,
+      "sprt2": 0,
+      "runeslots": [],
+      "PassiveSkillID": 0,
+      "PassiveSkillID2": 0,
+      "cosmanidx": 0,
+      "costidx": 0,
+      "maxlv": 30
+    },
+    {
+      "manidx": 8012182,
+      "idx": 6407,
+      "exp": 0,
+      "lv": 30,
+      "entExp": 0,
+      "entStep": 0,
+      "wpn": null,
+      "amr": null,
+      "asr1": null,
+      "sprt1": 0,
+      "sprt2": 0,
+      "runeslots": [],
+      "PassiveSkillID": 0,
+      "PassiveSkillID2": 0,
+      "cosmanidx": 0,
+      "costidx": 0,
+      "maxlv": 30
+    }
+  ],
+  "playedHeroes": [
+    {
+      "manidx": 8012170,
+      "idx": 7404,
+      "exp": 0,
+      "lv": 42,
+      "entExp": 0,
+      "entStep": 7,
+      "wpn": {
+        "manidx": 294071,
+        "idx": 10882,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": {
+              "manidx": 23837,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 294071,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2032
+                },
+                {
+                  "type": 2,
+                  "idx": 2033
+                },
+                {
+                  "type": 3,
+                  "idx": 2035
+                }
+              ]
+            }
+          },
+          {
+            "no": 1,
+            "jp": {
+              "manidx": 31667,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 294071,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2032
+                },
+                {
+                  "type": 2,
+                  "idx": 2033
+                },
+                {
+                  "type": 3,
+                  "idx": 2035
+                }
+              ]
+            }
+          },
+          {
+            "no": 2,
+            "jp": {
+              "manidx": 22639,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 294071,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2032
+                },
+                {
+                  "type": 2,
+                  "idx": 2034
+                },
+                {
+                  "type": 3,
+                  "idx": 2035
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "amr": {
+        "manidx": 524021,
+        "idx": 12308,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": {
+              "manidx": 29496,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 524021,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2021
+                },
+                {
+                  "type": 2,
+                  "idx": 2023
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          },
+          {
+            "no": 1,
+            "jp": {
+              "manidx": 50566,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 524021,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2021
+                },
+                {
+                  "type": 2,
+                  "idx": 2023
+                },
+                {
+                  "type": 3,
+                  "idx": 2026
+                }
+              ]
+            }
+          },
+          {
+            "no": 2,
+            "jp": {
+              "manidx": 51209,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 524021,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2021
+                },
+                {
+                  "type": 2,
+                  "idx": 2023
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "asr1": {
+        "manidx": 729068,
+        "idx": 14386,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": {
+              "manidx": 23762,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 729068,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2032
+                },
+                {
+                  "type": 2,
+                  "idx": 2034
+                },
+                {
+                  "type": 3,
+                  "idx": 2036
+                }
+              ]
+            }
+          },
+          {
+            "no": 1,
+            "jp": {
+              "manidx": 17693,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 729068,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2031
+                },
+                {
+                  "type": 2,
+                  "idx": 2033
+                },
+                {
+                  "type": 3,
+                  "idx": 2036
+                }
+              ]
+            }
+          },
+          {
+            "no": 2,
+            "jp": {
+              "manidx": 11697,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 729068,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2031
+                },
+                {
+                  "type": 2,
+                  "idx": 2033
+                },
+                {
+                  "type": 3,
+                  "idx": 2036
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "sprt1": 0,
+      "sprt2": 0,
+      "runeslots": [],
+      "PassiveSkillID": 22,
+      "PassiveSkillID2": 0,
+      "cosmanidx": 6573,
+      "costidx": 0,
+      "maxlv": 42
+    },
+    {
+      "manidx": 8012142,
+      "idx": 7405,
+      "exp": 0,
+      "lv": 40,
+      "entExp": 0,
+      "entStep": 7,
+      "wpn": {
+        "manidx": 294060,
+        "idx": 10070,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": {
+              "manidx": 3802,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 294060,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2022
+                },
+                {
+                  "type": 2,
+                  "idx": 2024
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          },
+          {
+            "no": 1,
+            "jp": {
+              "manidx": 35254,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 294060,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2022
+                },
+                {
+                  "type": 2,
+                  "idx": 2023
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          },
+          {
+            "no": 2,
+            "jp": {
+              "manidx": 25393,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 5,
+              "eq_manidx": 294060,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2022
+                },
+                {
+                  "type": 2,
+                  "idx": 2024
+                },
+                {
+                  "type": 3,
+                  "idx": 2026
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "amr": {
+        "manidx": 526689,
+        "idx": 12646,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": {
+              "manidx": 42815,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 526689,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2022
+                },
+                {
+                  "type": 2,
+                  "idx": 2023
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          },
+          {
+            "no": 1,
+            "jp": {
+              "manidx": 46548,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 526689,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2021
+                },
+                {
+                  "type": 2,
+                  "idx": 2023
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          },
+          {
+            "no": 2,
+            "jp": {
+              "manidx": 43441,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 526689,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2021
+                },
+                {
+                  "type": 2,
+                  "idx": 2024
+                },
+                {
+                  "type": 3,
+                  "idx": 2026
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "asr1": {
+        "manidx": 729065,
+        "idx": 14592,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": {
+              "manidx": 24484,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 729065,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2032
+                },
+                {
+                  "type": 2,
+                  "idx": 2034
+                },
+                {
+                  "type": 3,
+                  "idx": 2036
+                }
+              ]
+            }
+          },
+          {
+            "no": 1,
+            "jp": {
+              "manidx": 24481,
+              "jidx": 203,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 729065,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2032
+                },
+                {
+                  "type": 2,
+                  "idx": 2033
+                },
+                {
+                  "type": 3,
+                  "idx": 2036
+                }
+              ]
+            }
+          },
+          {
+            "no": 2,
+            "jp": {
+              "manidx": 38812,
+              "jidx": 202,
+              "exp": 0,
+              "ent_st": 0,
+              "eq_manidx": 729065,
+              "optlist": [
+                {
+                  "type": 1,
+                  "idx": 2022
+                },
+                {
+                  "type": 2,
+                  "idx": 2024
+                },
+                {
+                  "type": 3,
+                  "idx": 2025
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "sprt1": 0,
+      "sprt2": 0,
+      "runeslots": [],
+      "PassiveSkillID": 7,
+      "PassiveSkillID2": 0,
+      "cosmanidx": 9038,
+      "costidx": 0,
+      "maxlv": 40
+    },
+    {
+      "manidx": 8012186,
+      "idx": 7418,
+      "exp": 0,
+      "lv": 30,
+      "entExp": 0,
+      "entStep": 7,
+      "wpn": {
+        "manidx": 294059,
+        "idx": 10124,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": null
+          },
+          {
+            "no": 1,
+            "jp": null
+          },
+          {
+            "no": 2,
+            "jp": null
+          }
+        ]
+      },
+      "amr": {
+        "manidx": 1478027,
+        "idx": 148,
+        "slot": 0,
+        "slots": []
+      },
+      "asr1": {
+        "manidx": 729073,
+        "idx": 14517,
+        "slot": 3,
+        "slots": [
+          {
+            "no": 0,
+            "jp": null
+          },
+          {
+            "no": 1,
+            "jp": null
+          },
+          {
+            "no": 2,
+            "jp": null
+          }
+        ]
+      },
+      "sprt1": 0,
+      "sprt2": 0,
+      "runeslots": [],
+      "PassiveSkillID": 1,
+      "PassiveSkillID2": 0,
+      "cosmanidx": 0,
+      "costidx": 0,
+      "maxlv": 30
+    },
+    {
+      "manidx": 8012146,
+      "idx": 140,
+      "exp": 0,
+      "lv": 30,
+      "entExp": 50,
+      "entStep": 0,
+      "wpn": null,
+      "amr": null,
+      "asr1": null,
+      "sprt1": 0,
+      "sprt2": 0,
+      "runeslots": [],
+      "PassiveSkillID": 0,
+      "PassiveSkillID2": 0,
+      "cosmanidx": 0,
+      "costidx": 0,
+      "maxlv": 30
+    },
+    {
+      "manidx": 8012182,
+      "idx": 6407,
+      "exp": 0,
+      "lv": 30,
+      "entExp": 0,
+      "entStep": 0,
+      "wpn": null,
+      "amr": null,
+      "asr1": null,
+      "sprt1": 0,
+      "sprt2": 0,
+      "runeslots": [],
+      "PassiveSkillID": 0,
+      "PassiveSkillID2": 0,
+      "cosmanidx": 0,
+      "costidx": 0,
+      "maxlv": 30
+    }
+  ],
+  "mainRewards": [
+    {
+      "type": 23,
+      "v1": 1,
+      "v2": 7132,
+      "v3": 1
+    }
+  ],
+  "additionRewards": [
+    {
+      "type": 3,
+      "v1": 4456,
+      "v2": 0,
+      "v3": 0
+    },
+    {
+      "type": 28,
+      "v1": 2,
+      "v2": 14,
+      "v3": 0
+    }
+  ],
+  "sync_finance": {
+    "dpinfo": {
+      "freeCurP": 17,
+      "freeMaxP": 30,
+      "remainSecRegenFreeP": 588
+    },
+    "cash": 886,
+    "gold": 10496797,
+    "curClovers": 190,
+    "maxClovers": 1000,
+    "ruby": 643
+  },
+  "sync_addHeroes": [],
+  "sync_addRunes": [
+    {
+      "primeInfo": {
+        "manidx": 2546749,
+        "accidx": 10832480,
+        "equip_runeslot_manidx": 0,
+        "runeidx": 1,
+        "runelv": 1,
+        "runeexp": 0,
+        "category": 1
+      },
+      "optionList": [
+        {
+          "manidx": 10329580,
+          "runeprime_manidx": 2546749,
+          "optgroupno": 1,
+          "optidx": 10001,
+          "optv1": 6,
+          "optv2": 0
+        },
+        {
+          "manidx": 10329581,
+          "runeprime_manidx": 2546749,
+          "optgroupno": 2,
+          "optidx": 10011,
+          "optv1": 3,
+          "optv2": 0
+        },
+        {
+          "manidx": 10329582,
+          "runeprime_manidx": 2546749,
+          "optgroupno": 3,
+          "optidx": 17329,
+          "optv1": 284,
+          "optv2": 0
+        },
+        {
+          "manidx": 10329583,
+          "runeprime_manidx": 2546749,
+          "optgroupno": 3,
+          "optidx": 17336,
+          "optv1": 5,
+          "optv2": 0
+        }
+      ],
+      "MANIDX": 2546749
+    }
+  ],
+  "sync_Materials": [],
+  "sync_Equips": [],
+  "sync_Pieces": [
+    {
+      "manidx": 1210049,
+      "idx": 2,
+      "cnt": 23
+    }
+  ],
+  "sync_Consums": [],
+  "sync_addPets": [],
+  "successMissionList": [],
+  "bChooseReward": false,
+  "chooserewads": [],
+  "PASRewards": {
+    "petidx": 0,
+    "rewards": []
+  }
+}
