@@ -1,5 +1,13 @@
 #!/bin/sh
 
+THIS_SCRIPT=$0
+
+usage(){
+    echo "${THIS_SCRIPT} [-s|-r] packet_file"
+    echo "  -s: send packet."
+    echo "  -r: receive packet."
+}
+
 err_exit(){
     echo "Error exit. $1"
     exit 1
@@ -19,12 +27,19 @@ if [ ! -f dump_packet.py ]; then
     err_exit "dump_packet.py missed."
 fi
 
-if [ -z $1 ]; then
-    echo "Usage: "$0" packet_file"
+if [ -z $2 ]; then
+    usage
     err_exit "no packet data file specified."
 fi
 
-python dump_packet.py $1
+if [ $1 == "-s" ]; then
+    python dump_packet.py $2 -s
+elif [ $1 == "-r" ]; then
+    python dump_packet.py $2 -r
+else
+    usage;
+    err_exit "illegal argument: $1"
+fi
 
 base64 -D -i key -o key.hex
 base64 -D -i iv -o iv.hex

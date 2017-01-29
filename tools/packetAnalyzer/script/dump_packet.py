@@ -9,7 +9,7 @@ def unpackData(buff, l):
         bytesArray += (struct.pack('B',string.atoi(hexStr, 16)))
     return bytesArray
 
-def transform(textfile, keyfile, ivfile, datafile):
+def transform(textfile, mode, keyfile, ivfile, datafile):
     try:
         tfp = open(textfile, 'r')
         kfp = open(keyfile, 'wb')
@@ -39,7 +39,9 @@ def transform(textfile, keyfile, ivfile, datafile):
     buf = tfp.read(ivlen*2)
     iv = unpackData(buf, ivlen*2)
     ifp.write(iv)
-    
+
+    if mode == '-r':
+        buf = tfp.read(8)
     buf = tfp.read(8)
     buf = unpackData(buf, 8)
     datalen = struct.unpack('<i', buf)[0]
@@ -61,5 +63,5 @@ def transform(textfile, keyfile, ivfile, datafile):
     '''
 
 if __name__ == '__main__':
-    transform(sys.argv[1],  'key', 'iv', 'data')
+    transform(sys.argv[1], sys.argv[2], 'key', 'iv', 'data')
 
