@@ -21,6 +21,18 @@ static property_t dungeon_clrtime_property = {
   .motified = 0,
 };
 
+static property_t tower_rush_win_property = {
+  .filename = "tower_rush_win",
+  .buf = {0},
+  .motified = 0,
+};
+
+static property_t debug_dump_packet_property = {
+  .filename = "debug_dump_packet",
+  .buf = {0},
+  .motified = 0,
+};
+
 static property_t nil_property = {
   .filename = NULL,
   .buf = {0},
@@ -30,7 +42,9 @@ static property_t nil_property = {
 static property_t *configs[] = {
   &target_pid_property,
   &dungeon_clrtime_property,
-  &nil_property
+  &tower_rush_win_property,
+  &debug_dump_packet_property,
+  &nil_property  /* sentinel */
 };
 
 int hook_config(const char *name, char **value)

@@ -3,17 +3,19 @@
 THIS_FILE=$0
 
 usage(){
-    echo "Usage: $0 [-l|-u|-s|-f|-t] [option_value]";
+    echo "Usage: $0 [-l|-u|-s|-f|-d|-r|-t] [optional_value]";
     echo "    -l : load syscall hijack module";
     echo "    -u : unload syscall hijack module";
     echo "    -s : start hijack";
     echo "    -f : stop hijack";
-    echo "    -l seconds: specify dungeon clrtime";
+    echo "    -r : win tower rush";
+    echo "    -d : dump packet info to kmsg";
+    echo "    -t seconds: specify dungeon clrtime";
     exit 1;
 }
 
 noproc_exit(){
-    echo "Soulseeker process not running! abort.";
+    echo "Game not running! abort.";
     exit 1;
 }
 
@@ -23,9 +25,12 @@ if [ -z "$1" ]; then
     usage
 fi
 
-while getopts "lusft:" arg
+while getopts "lusfrdt:" arg
 do
     case $arg in
+        r)
+          echo 1 > /proc/soulseeker_hook/tower_rush_win
+          ;;
         t)
           echo "$optarg" > /proc/soulseeker_hook/dungeon_clrtime
           ;;
@@ -49,6 +54,9 @@ do
           ;;
         f)
           echo 0 > /proc/soulseeker_hook/target_pid  
+          ;;
+        d)
+          echo 1 > /proc/soulseeker_hook/debug_dump_packet
           ;;
         ?)
           usage
