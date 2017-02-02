@@ -1,21 +1,21 @@
 # 游戏辅助模块
 
 ## 使用方法：
-1. [编译程序](#compile)
-2. 将hook.tar.gz传送至手机并解压
+* [编译程序](#compile)
+* 将hook.tar.gz传送至手机并解压
 ```
 $ adb push hook.tar.gz /mnt/sdcard/
 $ adb shell
 $ cd /mnt/sdcard/
 $ tar xzf hook.tar.gz
 ```
-3. 拷贝wrapper文件夹下脚本到/system/bin/文件夹下并添加执行权限(以L36H为例)
+* 拷贝wrapper文件夹下脚本到/system/bin/文件夹下并添加执行权限(以L36H为例)
 ```
 # cp -a wrapper/soulAssistKmoduleWrapperL36H.sh /system/bin/
 # chmod 777 /system/bin/soulAssistKmoduleWrapperL36H.sh
 ```
-4. 启动游戏
-5. 执行wrapper脚本开启作弊
+* 启动游戏
+* 执行wrapper脚本开启作弊
 ```
 # #加载辅助模块
 # soulAssistKmoduleWrapperL36H.sh -l -s
@@ -48,19 +48,19 @@ $ tar xzf hook.tar.gz
 * 突破内核模块校验机制，实现在无对应内核源码的手机上运行
 
 <h2 id="compile">编译程序</h2>
-1. 配置编译环境(build-essential、交叉编译器等)
-2. 下载解压对应手机内核的源码
-3. 编辑.export文件，配置交叉编译器和内核源码树路径
-4. 执行  
+* 配置编译环境(build-essential、交叉编译器等)
+* 下载解压对应手机内核的源码
+* 编辑.export文件，配置交叉编译器和内核源码树路径
+* 执行  
 ```
 $ source .export
 ```
-5. 编译内核
+* 编译内核
 ```
 $ make menuconfig
 $ make
 ```
-6. 编译程序
+* 编译程序
 ```
 $ make
 ```
