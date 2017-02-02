@@ -47,7 +47,8 @@ $ tar xzf hook.tar.gz
 * 扭曲地下城强制通关。即使战斗失败，也能够成功通关。
 * 突破内核模块校验机制，实现在无对应内核源码的手机上运行
 
-## <span id="compile">编译程序</span>
+<span id="compile"> </span>
+## 编译程序
 1. 配置编译环境(build-essential、交叉编译器等)
 2. 下载解压对应手机内核的源码
 3. 编辑.export文件，配置交叉编译器和内核源码树路径
