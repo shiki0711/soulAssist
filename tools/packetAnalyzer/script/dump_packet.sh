@@ -6,6 +6,7 @@ usage(){
     echo "${THIS_SCRIPT} [-s|-r] packet_file"
     echo "  -s: send packet."
     echo "  -r: receive packet."
+    echo "  -c: chat packet."
 }
 
 err_exit(){
@@ -36,6 +37,8 @@ if [ $1 == "-s" ]; then
     python dump_packet.py $2 -s
 elif [ $1 == "-r" ]; then
     python dump_packet.py $2 -r
+elif [ $1 == "-c" ]; then
+    python dump_packet.py $2 -c
 else
     usage;
     err_exit "illegal argument: $1"

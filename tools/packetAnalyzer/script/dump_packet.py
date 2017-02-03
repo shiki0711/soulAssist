@@ -2,10 +2,12 @@ import struct
 import string
 import sys
 
-def unpackData(buff, l):
+def unpackData(buff, l, strip0=False):
     bytesArray = ''
     for i in range(0, l, 2):
         hexStr = str(buff[i:i+2])
+        if strip0 and hexStr == '00':
+            continue
         bytesArray += (struct.pack('B',string.atoi(hexStr, 16)))
     return bytesArray
 
@@ -19,6 +21,13 @@ def transform(textfile, mode, keyfile, ivfile, datafile):
         print 'Openfile error!'
         return -1
 
+    if mode == '-c':
+        strip0 = True
+        mul = 2
+    else:
+        strip0 = False
+        mul = 2
+
     buf = tfp.read(8)
     buf = unpackData(buf, 8)
     hdr1 = struct.unpack('<i', buf)[0]
@@ -29,24 +38,24 @@ def transform(textfile, mode, keyfile, ivfile, datafile):
     buf = tfp.read(8)
     buf = unpackData(buf, 8)
     keylen = struct.unpack('<i', buf)[0]
-    buf = tfp.read(keylen*2)
-    key = unpackData(buf, keylen*2)
+    buf = tfp.read(keylen*mul)
+    key = unpackData(buf, keylen*mul, strip0)
     kfp.write(key)
 
     buf = tfp.read(8)
     buf = unpackData(buf, 8)
     ivlen = struct.unpack('<i', buf)[0]
-    buf = tfp.read(ivlen*2)
-    iv = unpackData(buf, ivlen*2)
+    buf = tfp.read(ivlen*mul)
+    iv = unpackData(buf, ivlen*mul, strip0)
     ifp.write(iv)
 
-    if mode == '-r':
+    if mode == '-r' or mode == '-c':
         buf = tfp.read(8)
     buf = tfp.read(8)
     buf = unpackData(buf, 8)
     datalen = struct.unpack('<i', buf)[0]
-    buf = tfp.read(datalen*2)
-    data = unpackData(buf, datalen*2)
+    buf = tfp.read(datalen*mul)
+    data = unpackData(buf, datalen*mul, strip0)
     dfp.write(data)
 
     buf = tfp.read(8)
