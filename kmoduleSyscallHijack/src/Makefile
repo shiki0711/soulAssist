@@ -4,7 +4,7 @@ EXTRA_CFLAGS += -fno-pic
 
 obj-m += hook.o
 
-hook-objs := main.o proc.o hook_config.o hook_send.o base64.o dbg.o
+hook-objs := main.o proc.o hook_config.o hook_send.o hook_recv.o base64.o encrypt.o dbg.o
 
 all:
 	make -C $(KDIR) M=$(PWD) modules

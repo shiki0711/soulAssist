@@ -26,7 +26,7 @@ typedef struct hook_entry {
 
 static hook_entry_t hook_entry_list [] = {
   {hook_send_init, hook_send_exit},
-  //{hook_clock_gettime_init, hook_clock_gettime_exit},
+  {hook_recv_init, hook_recv_exit},
   {NULL, NULL}
 };
 

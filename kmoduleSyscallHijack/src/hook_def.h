@@ -16,6 +16,8 @@
 //extern void hook_clock_gettime_exit(void);
 extern int hook_send_init(void);
 extern void hook_send_exit(void);
+extern int hook_recv_init(void);
+extern void hook_recv_exit(void);
 
 
 #endif
