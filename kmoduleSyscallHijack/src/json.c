@@ -18,15 +18,16 @@
 #include "util.h" 
 #include "rbtree.h"
 #include "list.h"
-#define json_calloc(...) calloc(__VA_ARGS__)
+int ggg=0;
+#define json_calloc(...) calloc(__VA_ARGS__);
 #define json_free(p) free(p)
-#define hook_debug(...) printf(__VA_ARGS__);
+#define hook_debug(...) printf(__VA_ARGS__)
 
 #endif /* __UT__ */
 
 #include "json.h"
 
-#define GOTO_ERR(LABLE, ...) {hook_debug(__VA_ARGS__);goto LABLE;}
+#define GOTO_ERR(LABLE, ...) {hook_debug(__VA_ARGS__); goto LABLE;}
 
 enum {
   json_sts_start,
@@ -51,7 +52,7 @@ enum {
   json_lntype_none
 };
 
-
+/* json_object */
 int json_obj_insert(json_obj_t *jsonobj,  json_t *data) {
   struct rb_node **new = &(jsonobj->root.rb_node), *parent = NULL;
   json_t *this = NULL;
@@ -98,7 +99,7 @@ json_t *json_obj_find(json_obj_t *jsonobj, const char *key){
 }
 
 /* rbtree extention */
-static struct rb_node *rb_left_deepest_node(const struct rb_node *node) {
+struct rb_node *rb_left_deepest_node(const struct rb_node *node) {
   for (;;) {
     if (node->rb_left)
       node = node->rb_left;
@@ -109,7 +110,7 @@ static struct rb_node *rb_left_deepest_node(const struct rb_node *node) {
   }
 }
 
-static struct rb_node *rb_next_postorder(const struct rb_node *node) {
+struct rb_node *rb_next_postorder(const struct rb_node *node) {
   const struct rb_node *parent;
   if (!node)
     return NULL;
@@ -121,20 +122,27 @@ static struct rb_node *rb_next_postorder(const struct rb_node *node) {
     return (struct rb_node *)parent;
 }
 
-static struct rb_node *rb_first_postorder(const struct rb_root *root) {
+struct rb_node *rb_first_postorder(const struct rb_root *root) {
   if (!root->rb_node)
     return NULL;
   return rb_left_deepest_node(root->rb_node);
 }
 
-#define rbtree_postorder_for_each_entry_safe(pos, n, root, field) \
-  for (pos = rb_entry(rb_first_postorder(root), typeof(*pos), field),   \
-         n = rb_entry(rb_next_postorder(&pos->field),                   \
-                      typeof(*pos), field);                             \
-       &pos->field;                                                     \
-       pos = n,                                                         \
-         n = rb_entry(rb_next_postorder(&pos->field),                   \
-                      typeof(*pos), field))
+/* json array */
+int json_array_insert(json_array_t *jsonary,  json_t *data) {
+  list_add_tail(&(data->link.li), &(jsonary->head));
+  jsonary->cnt++;
+  return 1;
+}
+
+json_t* json_array_find(json_array_t *jsonary, int idx) {
+  json_t *pos = NULL, *n = NULL;
+  if(jsonary->cnt <= idx) return NULL;
+  list_for_each_entry_safe(pos, n, &(jsonary->head), link.li){
+    if(!idx--) break;
+  }
+  return pos;
+}
 
 
 /* debug */
@@ -156,11 +164,11 @@ void json_dump(json_t *entry){
     hook_debug("%s", buff);
     break;
   case json_type_int:
-    snprintf(p, 128-lv, "key:%s value(int):%ld\n", entry->key, entry->value.i);
+    snprintf(p, 128-lv, "key:%s value(int):%s\n", entry->key, entry->value.s);
     hook_debug("%s", buff);
     break;
   case json_type_double:
-    snprintf(p, 128-lv, "key:%s value(double):%f\n", entry->key, entry->value.f);
+    snprintf(p, 128-lv, "key:%s value(double):%s\n", entry->key, entry->value.s);
     hook_debug("%s", buff);
     break;
   case json_type_object:
@@ -171,7 +179,19 @@ void json_dump(json_t *entry){
     }
     break;
   case json_type_array:
-    /* TODO */
+    snprintf(p, 128-lv, "key:%s value(array):\n", entry->key);
+    hook_debug("%s", buff);
+    list_for_each_entry_safe(pos, n, &(entry->value.a->head), link.li){
+      json_dump(pos);
+    }
+    break;
+  case json_type_bool:
+    snprintf(p, 128-lv, "key:%s value(boolean):%s\n", entry->key, entry->value.i?"true":"false");
+    hook_debug("%s", buff);
+    break;
+  case json_type_null:
+    snprintf(p, 128-lv, "key:%s value(null):%s\n", entry->key, "null");
+    hook_debug("%s", buff);
     break;
   }
   --lv;
@@ -185,6 +205,8 @@ static inline int is_space(char c) {
 void json_release(json_t *entry) {
   json_t *pos, *n;
 
+  if(!entry) return;
+
   if(entry->key) json_free(entry->key);
   switch(entry->type){
   case json_type_string:
@@ -192,45 +214,66 @@ void json_release(json_t *entry) {
     break;
   case json_type_int:
   case json_type_double:
+    if(entry->value.s) json_free(entry->value.s);
     break;
   case json_type_object:
     rbtree_postorder_for_each_entry_safe(pos, n, &(entry->value.o->root), link.tr){
       json_release(pos);
     }
+    json_free(entry->value.o);
     break;
   case json_type_array:
-    /* TODO */
+    list_for_each_entry_safe(pos, n, &(entry->value.a->head), link.li){
+      json_release(pos);
+    }
+    json_free(entry->value.s);
     break;
   }
   json_free(entry);
 }
 
 
-#define NEW_ENTRY(_entry, _parent, _stk, _key, _errlb ) {        \
-    _parent = NULL;                                     \
-    stack_top(&_stk, (int*)(&_parent));                 \
-    _entry = json_calloc(1, sizeof(json_t));                        \
-    if(!_entry) GOTO_ERR(_errlb, "json parser no enough memory\n"); \
-    if(stack_push(&_stk, (int)_entry)) GOTO_ERR(_errlb, "json parser stack overflow!\n"); \
-    if(_parent) {                                                       \
-      if(_parent->lntype == json_lntype_list) {                         \
-        list_add_tail(&(_entry->link.li), &(_parent->value.a->head));   \
-      }else {                                                     \
-        _entry->key = _key;                                       \
-        json_obj_insert(_parent->value.o, _entry);                \
-      }                                                           \
-    }                                                             \
+#define NEW_ENTRY(_entry, _parent, _stk, _key, _errlb ) {               \
+    (_parent) = NULL;                                                   \
+    stack_top(&(_stk), (int*)(&(_parent)));                             \
+    (_entry) = json_calloc(1, sizeof(json_t));                          \
+    if(!(_entry)) GOTO_ERR(_errlb, "json parser no enough memory\n");   \
+    if(stack_push(&(_stk), (int)(_entry))) GOTO_ERR(_errlb, "json parser stack overflow!\n"); \
+    if((_parent)) {                                                     \
+      if((_parent)->lntype == json_lntype_list) {                       \
+        json_array_insert((_parent)->value.a, (_entry));                \
+      }else {                                                           \
+        (_entry)->key = (_key);                                         \
+        json_obj_insert((_parent)->value.o, (_entry));                  \
+      }                                                                 \
+    }                                                                   \
   }
 
-#define NEW_OBJECT(_rt, _errlb) {                                \
-    _rt = json_calloc(1, sizeof(struct rb_root));                \
-    if(!_rt) GOTO_ERR(_errlb, "json parser no enough memory\n"); \
+#define NEW_OBJECT(_rt, _errlb) {                                       \
+    (_rt) = json_calloc(1, sizeof(json_obj_t));                         \
+    if(!(_rt)) GOTO_ERR(_errlb, "json parser no enough memory\n");      \
   }
 
-#define NEW_STRING(_p, _s1, _s2, _errlb) {                      \
-    _p = json_calloc(1, (_s2-_s1+1));                           \
-    if(!_p) GOTO_ERR(_errlb, "json parser no enough memory\n"); \
-    strncpy(_p, _s1, (_s2-_s1));                                \
+#define NEW_ARRAY(_li, _errlb) {                                        \
+    (_li) = json_calloc(1, sizeof(json_array_t));                       \
+    if(!(_li)) GOTO_ERR(_errlb, "json parser no enough memory\n");      \
+    INIT_LIST_HEAD(&((_li)->head));                                     \
+    (_li)->cnt = 0;                                                     \
+  }
+
+#define NEW_STRING(_p, _s1, _s2, _errlb) {                              \
+    (_p) = json_calloc(1, ((_s2)-(_s1)+1));                             \
+    if(!(_p)) GOTO_ERR(_errlb, "json parser no enough memory\n");       \
+    strncpy((_p), (_s1), ((_s2)-(_s1)));                                \
+  }
+
+#define PROC_FIN(_stk, _sts, _errlb) {           \
+    if(stack_top(&(_stk), &(_sts))) GOTO_ERR(_errlb, "json parser stack 0!\n"); \
+    if((_sts) == json_sts_start){                                       \
+      stack_push(&(_stk), json_sts_fin);                                \
+    }else{                                                              \
+      stack_push(&(_stk), json_sts_value_fin);                          \
+    }                                                                   \
   }
 
 static inline int is_escape(const char *s) {
@@ -242,14 +285,280 @@ static inline int is_escape(const char *s) {
   return (i%2);
 }
 
+static inline int is_endofvalue(char c) {
+  return (c==' ' || c=='\t' || c=='\r' || c=='\n' || c==',' || c=='}' || c==']');
+}
+
+/*
+ * reutrn value:
+ * -1: error
+ * 0: int
+ * 1: double
+*/
+static int parse_number(const char *s, int *len) {
+  /*
+    number:
+    int
+    int frac
+    int exp
+    int frac exp
+
+    int:
+    digit
+    digit1-9 digits 
+    - digit
+    - digit1-9 digits
+
+    frac:
+    . digits
+
+    exp:
+    e digits
+
+    digits:
+    digit
+    digit digits
+
+    e:
+    e
+    e+
+    e-
+    E
+    E+
+    E-
+   */
+  
+  /* parse number state */
+  enum {
+    _s_init,
+    _s_minus,
+    _s_int1,
+    _s_int2,
+    _s_frac_dot,
+    _s_exp_e,
+    _s_exp_p
+  };
+  /* number type */
+  enum {
+    _t_init,
+    _t_int,
+    _t_frac,
+    _t_exp
+  };
+
+  char c = 0;
+  int i = 0;
+  int type = _t_init;
+  int sts = _s_init;
+  
+  *len = 0;
+  while((c=s[i])){
+    switch(c){
+    case '-':
+      if(type == _t_init && sts == _s_init){
+        type = _t_int;
+        sts = _s_minus;
+      }else if(type == _t_exp && sts == _s_exp_e){
+        sts = _s_exp_p;
+      }else{
+        return -1;
+      }
+      break;
+
+    case '+':
+      if(type == _t_exp && sts == _s_exp_e){
+        sts = _s_exp_p;
+      }else{
+        return -1;
+      }
+      break;
+
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+      if(type == _t_init || type == _t_int){
+        if(sts == _s_int1 && s[i-1] == '0'){
+          return -1;
+        }
+        if(sts == _s_init || sts == _s_minus) {
+          sts = _s_int1;
+        }else if(sts == _s_int1 || sts == _s_int2) {
+          sts = _s_int2;
+        }else{
+          return -1;
+        }
+        type = _t_int;
+      }else if(type == _t_frac){
+        if(sts == _s_frac_dot || sts == _s_int2){
+          sts = _s_int2;
+        }else{
+          return -1;
+        }
+      }else if(type == _t_exp){
+        if(sts == _s_exp_e || sts == _s_exp_p || sts == _s_int2){
+          sts = _s_int2;
+        }else{
+          return -1;
+        }
+      }else{
+        return -1;
+      }
+      break;
+
+    case '.':
+      if(type != _t_int) {
+        return -1;
+      }
+      if(sts == _s_int1 || sts == _s_int2) {
+        sts = _s_frac_dot;
+        type = _t_frac;
+      }else{
+        return -1;
+      }
+      break;
+
+    case 'e':
+    case 'E':
+      if(type == _t_int){
+        if(sts == _s_int1 || sts == _s_int2){
+          type = _t_exp;
+          sts = _s_exp_e;
+        }else{
+          return -1;
+        }
+      }else if(type == _t_frac){
+        if(sts == _s_int2){
+          type = _t_exp;
+          sts = _s_exp_e;
+        }else{
+          return -1;
+        }
+      }else{
+        return -1;
+      }
+      break;
+
+    case ' ':
+      
+    default:
+      if(is_endofvalue(c)){
+        goto _L_fin;
+      }else{
+        return -1;
+      }
+      break;
+    }
+    ++i;
+  }
+ _L_fin:
+  if(type == _t_int){
+    if(sts == _s_int1 || sts == _s_int2){
+      *len = i;
+      return 0;
+    }
+  }else if(type == _t_frac || type == _t_exp){
+    if(sts == _s_int2){
+      *len = i;
+      return 1;
+    }
+  }
+  return -1;
+}
+
+/*
+ * return value:
+ * -1: parse error
+ * 0: false
+ * 1: true
+ */
+static int parse_boolean(const char *s, int *len){
+  char c;
+  int i = 0;
+  char expect_char[2][6] = {
+    {'f', 'a', 'l', 's', 'e', 0},
+    {'t', 'r', 'u', 'e', 0}
+  };
+  int expect = -1;
+  int idx = 0;
+
+  while((c=s[i])){
+    if(expect == -1){
+      if(c==expect_char[0][idx]){
+        expect = 0;
+      }else if(c==expect_char[1][idx]){
+        expect = 1;
+      }else{
+        return -1;
+      }
+    }else{
+      if(expect_char[expect][idx]){
+        if(expect_char[expect][idx] != c){
+          return -1;
+        }
+      }else{
+        /* matched */
+        if(is_endofvalue(c)){
+          *len = i;
+          return expect;
+        }else{
+          return -1;
+        }
+      }
+    }
+    ++idx;
+    ++i;
+  }
+  return -1;
+}
+
+/*
+ * return value:
+ * -1: parse error
+ * 0: parsr ok
+ */
+static int parse_null(const char *s, int *len){
+  char c;
+  int i = 0;
+  char expect_char[] = {'n', 'u', 'l', 'l', 0};
+  int idx = 0;
+
+  while((c=s[i])){
+    if(expect_char[idx]){
+      if(expect_char[idx] != c){
+        return -1;
+      }
+    }else{
+      /* matched */
+      if(is_endofvalue(c)){
+        *len = i;
+        return 0;
+      }else{
+        return -1;
+      }
+    }
+    ++idx;
+    ++i;
+  }
+  return -1;
+}
+
 json_t* json_parse(const char *in) {
-  int i=0;
+  int i = 0;
   char c;
   int sts = 0;
   json_t *entry = NULL, *parent = NULL;
   stack_t sts_stk, entry_stk;
   const char *s1 = NULL, *s2 = NULL;
   char *t = NULL;
+  int len = 0;
+  int type;
 
   stack_init(&sts_stk);
   stack_push(&sts_stk, json_sts_start);
@@ -272,6 +581,12 @@ json_t* json_parse(const char *in) {
         /* new state */
         stack_push(&sts_stk, json_sts_obj);
       }else if(c == '['){
+        /* new array entry */
+        NEW_ENTRY(entry, parent, entry_stk, "", L_parse_err);
+        entry->type = json_type_array;
+        entry->lntype = json_lntype_list;
+        NEW_ARRAY(entry->value.a, L_parse_err);
+        /* new state */
         stack_push(&sts_stk, json_sts_array);
       }else{
         GOTO_ERR(L_parse_err, "json format error, json string should begin with a '[' or '{'\n");
@@ -285,7 +600,8 @@ json_t* json_parse(const char *in) {
         if(stack_push(&sts_stk, json_sts_key_start)) GOTO_ERR(L_parse_err, "json parser stack overflow!\n");
       }else if(c=='}'){
         stack_pop(&sts_stk, &sts);
-        stack_pop(&entry_stk, &sts);
+        stack_pop(&entry_stk, (int*)&entry);
+        PROC_FIN(sts_stk, sts, L_parse_err);
       }else{
         GOTO_ERR(L_parse_err, "json format error, a key should begin with '\"'\n");
       }
@@ -327,38 +643,132 @@ json_t* json_parse(const char *in) {
       break;
 
     case json_sts_colon:
+    case json_sts_array:
       if(is_space(c)){
         goto L_continue;
       }
       if(c=='"'){
         /* string */
-        stack_pop(&sts_stk, &sts);
+        if(sts != json_sts_array){
+          stack_pop(&sts_stk, &sts);
+        }
         stack_push(&sts_stk, json_sts_string);
         s1 = in + i + 1;
       }else if(c=='{'){
         /* object */
+        if(sts == json_sts_array){
+          NEW_ENTRY(entry, parent, entry_stk, "", L_parse_err);
+        }else{
+          stack_top(&entry_stk, (int*)&entry);
+          stack_pop(&sts_stk, &sts);
+        }
+        entry->type = json_type_object;
+        entry->lntype = json_lntype_rbtree;
+        NEW_OBJECT(entry->value.o, L_parse_err);
+        /* new state */
+        stack_push(&sts_stk, json_sts_obj);
       }else if(c=='['){
         /* array */
+        if(sts == json_sts_array){
+          NEW_ENTRY(entry, parent, entry_stk, "", L_parse_err);
+        }else{
+          stack_top(&entry_stk, (int*)&entry);
+          stack_pop(&sts_stk, &sts);
+        }
+        entry->type = json_type_array;
+        entry->lntype = json_lntype_list;
+        NEW_ARRAY(entry->value.a, L_parse_err);
+        /* new state */
+        stack_push(&sts_stk, json_sts_array);
       }else if(c=='t' || c=='f'){
         /* boolean */
+        if((type=parse_boolean(in+i, &len)) == -1){
+          GOTO_ERR(L_parse_err, "json format error, illegal value!\n");
+        }
+        if(sts != json_sts_array){
+          stack_pop(&sts_stk, &sts);
+        }else{
+          NEW_ENTRY(entry, parent, entry_stk, "", L_parse_err);
+        }
+        stack_pop(&entry_stk, (int*)(&entry));
+        stack_push(&sts_stk, json_sts_value_fin);
+        entry->type = json_type_bool;
+        entry->value.i = type;
+        /* since we inc i at L_continue, here we use len-1 */
+        i += (len-1);
+        goto L_continue;
       }else if(c=='n'){
         /* nil */
+        if(parse_null(in+i, &len) == -1){
+          GOTO_ERR(L_parse_err, "json format error, illegal value!\n");
+        }
+        if(sts != json_sts_array){
+          stack_pop(&sts_stk, &sts);
+        }else{
+          NEW_ENTRY(entry, parent, entry_stk, "", L_parse_err);
+        }
+        stack_pop(&entry_stk, (int*)(&entry));
+        stack_push(&sts_stk, json_sts_value_fin);
+        entry->type = json_type_null;
+        /* since we inc i at L_continue, here we use len-1 */
+        i += (len-1);
+        goto L_continue;
       }else if(c=='-' || (c>='0' && c<= '9')){
         /* number */
+        if((type=parse_number(in+i, &len)) == -1){
+          GOTO_ERR(L_parse_err, "json format error, illegal number!\n");
+        }
+        /* TODO(yanfeng):
+         * string -> int/double transformation
+         */
+        if(sts != json_sts_array){
+          stack_pop(&sts_stk, &sts);
+        }else{
+          NEW_ENTRY(entry, parent, entry_stk, "", L_parse_err);
+        }
+        stack_pop(&entry_stk, (int*)(&entry));
+        stack_push(&sts_stk, json_sts_value_fin);
+        /* since floating number operation inside kernel is not recommended,
+         * we temporarily store number value as a string
+        */
+        NEW_STRING(entry->value.s, in+i, in+i+len, L_parse_err);
+        if(type==0){
+          entry->type = json_type_int;
+        }else{
+          entry->type = json_type_double;
+        }
+        /* since we inc i at L_continue, here we use len-1 */
+        i += (len-1);
+        goto L_continue;
+      }else if(c==']'){
+        if(sts != json_sts_array){
+          GOTO_ERR(L_parse_err, "json format error, un-paired array brackets!\n");
+        }
+        stack_pop(&sts_stk, &sts);
+        stack_pop(&entry_stk, (int*)(&entry));
+        if(entry->type != json_type_array){
+          GOTO_ERR(L_parse_err, "json format error, un-paired array brackets\n");
+        }
+        PROC_FIN(sts_stk, sts, L_parse_err);
+      }else{
+        GOTO_ERR(L_parse_err, "json format error, illegal value!\n");
       }
       break;
 
     case json_sts_string:
       if(c=='"' && !is_escape(in+i)){
         stack_pop(&sts_stk, &sts);
+        stack_top(&sts_stk, &sts);
+        if(sts == json_sts_array){
+          NEW_ENTRY(entry, parent, entry_stk, "", L_parse_err);
+        }
+        stack_pop(&entry_stk, (int*)(&entry));
         stack_push(&sts_stk, json_sts_value_fin);
         s2 = in + i;
-        stack_top(&entry_stk, (int*)(&entry));
         if(s2 >= s1){
           NEW_STRING(entry->value.s, s1, s2, L_parse_err);
           entry->type = json_type_string;
         }
-        stack_pop(&entry_stk, &sts);
       }else{
         /* TODO(yanfeng): check control-character */
       }
@@ -372,30 +782,25 @@ json_t* json_parse(const char *in) {
       if(c==','){
         stack_pop(&sts_stk, &sts);
       }else if(c=='}'){
-        stack_pop(&sts_stk, &sts);
-        stack_top(&entry_stk, (int*)(&entry));
+        stack_pop(&sts_stk, &sts);  /* json_sts_value_fin */
+        stack_pop(&entry_stk, (int*)(&entry));
         if(entry->type != json_type_object){
           GOTO_ERR(L_parse_err, "json format error, un-paired object brackets\n");
         }
-        stack_pop(&sts_stk, &sts);
-        stack_pop(&entry_stk, &sts);
+        stack_pop(&sts_stk, &sts);  /* json_sts_obj */
+        PROC_FIN(sts_stk, sts, L_parse_err);
       }else if(c==']'){
-        stack_pop(&sts_stk, &sts);
-        stack_top(&entry_stk, (int*)(&entry));
+        stack_pop(&sts_stk, &sts);  /* json_sts_value_fin */
+        stack_pop(&entry_stk, (int*)(&entry));
         if(entry->type != json_type_array){
           GOTO_ERR(L_parse_err, "json format error, un-paired array brackets\n");
         }
-        stack_pop(&sts_stk, &sts);
-        stack_pop(&entry_stk, &sts);
+        stack_pop(&sts_stk, &sts);  /* json_sts_array */
+        PROC_FIN(sts_stk, sts, L_parse_err);
       }else{
         GOTO_ERR(L_parse_err, "json format error, expect comma or tail of object/array!\n");
       }
       break;
-
-
-
-
-
 
     case json_sts_fin:
       if(is_space(c)){
@@ -407,17 +812,17 @@ json_t* json_parse(const char *in) {
     }
     
     /* fin checking */
-    stack_top(&sts_stk, &sts);
-    if(sts == json_sts_start){
-      stack_pop(&sts_stk, &sts);
-      stack_push(&sts_stk, json_sts_fin);
-    }
+    //    stack_top(&sts_stk, &sts);
+    //    if(sts == json_sts_fin){
+    //      stack_pop(&sts_stk, &sts);
+    //      stack_push(&sts_stk, json_sts_fin);
+    //    }
         
     L_continue:
     ++i;
   }
   stack_top(&sts_stk, &sts);
-  stack_top(&entry_stk, (int*)&entry);
+  //stack_top(&entry_stk, (int*)&entry);
   if(sts == json_sts_fin){
     return entry;
   }

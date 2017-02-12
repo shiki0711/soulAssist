@@ -33,4 +33,9 @@
 *.su
 
 # others
+*.mod.c
 *.o.cmd
+.tmp_versions
+Module.symvers
+*.tar.gz
+modules.order

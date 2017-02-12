@@ -47,13 +47,31 @@ enum {
 typedef struct json_obj {
   struct rb_root root;
 } json_obj_t;
+/* rbtree extention for iterator */
+extern struct rb_node *rb_left_deepest_node(const struct rb_node *);
+extern struct rb_node *rb_next_postorder(const struct rb_node *);
+extern struct rb_node *rb_first_postorder(const struct rb_root *);
+#define rbtree_postorder_for_each_entry_safe(pos, n, root, field) \
+  for (pos = rb_entry(rb_first_postorder(root), typeof(*pos), field),   \
+         n = rb_entry(rb_next_postorder(&pos->field),                   \
+                      typeof(*pos), field);                             \
+       &pos->field;                                                     \
+       pos = n,                                                         \
+         n = rb_entry(rb_next_postorder(&pos->field),                   \
+                      typeof(*pos), field))
+/* iterator */
+#define json_obj_for_each rbtree_postorder_for_each_entry_safe
 
 /* array */
 typedef struct json_array {
   struct list_head head;
+  int cnt;
 } json_array_t;
+/* iterator */
+#define json_array_for_each list_for_each_entry_safe
 
 
+/* json instance type */
 typedef struct json {
   char type;
   char *key;
@@ -71,6 +89,19 @@ typedef struct json {
   } link;
 } json_t;
 
+/* json parser */
+extern json_t* json_parse(const char *);
 
+/* json editor */
+extern int json_add_int(json_t *, int);
+
+/* release */
+extern void json_release(json_t *);
+
+/* json serialize */
+extern char* json_serialize(json_t *);
+
+/* debug */
+extern void json_dump(json_t *);
 
 #endif
