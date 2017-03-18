@@ -52,6 +52,7 @@ $ tar xzf hook.tar.gz
 * 下载解压对应手机内核的源码
 * 编辑.export文件，配置交叉编译器和内核源码树路径
 * 执行  
+
 ```
 $ source .export
 ```
